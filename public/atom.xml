@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Rockts&#39;s BLOG</title>
+  <subtitle>不想被打搅</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://lekeopen.com/"/>
+  <updated>2017-04-03T11:45:14.000Z</updated>
+  <id>http://lekeopen.com/</id>
+  
+  <author>
+    <name>rockts</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于乐可开源“涉黑”的问题</title>
+    <link href="http://lekeopen.com/2016/05/%E5%85%B3%E4%BA%8E%E4%B9%90%E5%8F%AF%E5%BC%80%E6%BA%90%E2%80%9C%E6%B6%89%E9%BB%91%E2%80%9D%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>http://lekeopen.com/2016/05/关于乐可开源“涉黑”的问题/</id>
+    <published>2016-05-30T10:14:20.000Z</published>
+    <updated>2017-04-03T11:45:14.000Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;情况说明&quot;&gt;&lt;a href=&quot;#情况说明&quot; class=&quot;headerlink&quot; title=&quot;情况说明&quot;&gt;&lt;/a&gt;情况说明&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;这已经官网第二次宕机，宕机时间经历2天多。(原本以为比较麻烦，所以没有把恢复官网放到自己任务的最优先级)，等自己手上几个任务完成后，快到天亮的时候，结果用了不到10分钟就解决了问题。  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;可能是第二次官网宕机，比较有经验了吧。所以这次恢复官网很快&lt;/em&gt;  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;第一次宕机时间一天多，虽然用了 Git 作版本控制，但由于学艺不精。最后也用2-3个小时恢复网站。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这一次仅仅用10分钟就恢复了网站，不但网站恢复了。但找到了出问题的几个文件。但为什么会现这个问题，就无从而知了。&lt;/p&gt;
+&lt;h1 id=&quot;解决过程&quot;&gt;&lt;a href=&quot;#解决过程&quot; class=&quot;headerlink&quot; title=&quot;解决过程&quot;&gt;&lt;/a&gt;解决过程&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;前面在&lt;a href=&quot;http://lekeopen.com/2016/04/Git-%E5%BC%80%E5%8F%91%E8%80%85%E5%BF%85%E5%A4%87%E7%9A%84%E6%8A%80%E8%83%BD/&quot;&gt;【Git-开发者必备的技能】&lt;/a&gt;这篇文章中说过 &lt;a href=&quot;http://wwww.tsflea.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;天水跳蚤&lt;/a&gt; 这个项目应用 Git 作版本控制的解决方案。但公司官方基本也使用和 &lt;a href=&quot;http://www.tsflea.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;天水跳蚤&lt;/a&gt; 相同的版本控制方案。都是借助于第三方代码托管的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;所以第三方的 master 分支的代码是干净的。&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&quot;尝试&quot;&gt;&lt;a href=&quot;#尝试&quot; class=&quot;headerlink&quot; title=&quot;尝试&quot;&gt;&lt;/a&gt;尝试&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;登录生产环境 git pull 第三方代码托管 master 分主代码，但没有任何变化。 分析原因可能因为远程代码库 master 分支代码没有变化，导致 git pull 失败。&lt;/li&gt;
+&lt;li&gt;换命令 git feach 结果一样，虽然部分代码更新。但有问题的代码和新添有问题的文件依然存在。网站依然报500错误。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;解决&quot;&gt;&lt;a href=&quot;#解决&quot; class=&quot;headerlink&quot; title=&quot;解决&quot;&gt;&lt;/a&gt;解决&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;远程仓库（第三方代码托管） 新建分支 error&lt;/li&gt;
+&lt;li&gt;提交生产环境的问题代码到第三方 error 分支&lt;/li&gt;
+&lt;li&gt;删除生产环境官网网站目录&lt;/li&gt;
+&lt;li&gt;git clone 远程仓库 master 分支到生产环境新建网站目录中。&lt;blockquote&gt;
+&lt;p&gt;网站恢复正常&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;分析原因&quot;&gt;&lt;a href=&quot;#分析原因&quot; class=&quot;headerlink&quot; title=&quot;分析原因&quot;&gt;&lt;/a&gt;分析原因&lt;/h1&gt;&lt;h2 id=&quot;操作流程&quot;&gt;&lt;a href=&quot;#操作流程&quot; class=&quot;headerlink&quot; title=&quot;操作流程&quot;&gt;&lt;/a&gt;操作流程&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;在本地新建 error 分支&lt;/li&gt;
+&lt;li&gt;git pull 代码库中 error 分支到本地&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;发现问题文件&quot;&gt;&lt;a href=&quot;#发现问题文件&quot; class=&quot;headerlink&quot; title=&quot;发现问题文件&quot;&gt;&lt;/a&gt;发现问题文件&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;404.object.php   | 351 +++++++++++++++++++++++++++++
+
+lekee.cc         |   1 +
+
+wp-admin/includes/class-wp-screen.php      |   2 +-
+
+wp-admin/includes/ms-deprecated.php        |   2 +-
+
+wp-content/plugins/advanced-custom-fields/js/blog1.php     |  79 +++++++
+wp-content/plugins/contact-form-7/modules/gallery.php      |   7 +
+wp-content/themes/lekeopen/header.php                      |   2 +
+wp-includes/random_compat/random_bytes_dev_urandom.php     |   2 +-
+wp-includes/widgets/class-wp-widget-calendar.php           | 108 ---------  
+wp-includes/widgets/class-wp-widget-calendar.php.suspected | 108 +++++++++  
+10 files changed, 551 insertions(+), 111 deletions(-)
+create mode 100644 404.object.php
+create mode 160000 lekee.cc
+create mode 100644 wp-content/plugins/advanced-custom-fields/js/blog1.php
+create mode 100644 wp-content/plugins/contact-form-7/modules/gallery.php
+delete mode 100644 wp-includes/widgets/class-wp-widget-calendar.php
+create mode 100644 wp-includes/widgets/class-wp-widget-calendar.php.suspected
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;这是挂马代码和干净代码的区别，虽然修改这些有问题的代码能解决问题。&lt;br&gt;但至于这些文件是怎么被修改，其中的原理就不得而知了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;希望&quot;&gt;&lt;a href=&quot;#希望&quot; class=&quot;headerlink&quot; title=&quot;希望&quot;&gt;&lt;/a&gt;希望&lt;/h1&gt;&lt;p&gt;最后希望有知道的原因的或者安全专家能帮助彻底根治服务器的这个漏洞。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;情况说明&quot;&gt;&lt;a href=&quot;#情况说明&quot; class=&quot;headerlink&quot; title=&quot;情况说明&quot;&gt;&lt;/a&gt;情况说明&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;这已经官网第二次宕机，宕机时间经历2天多。(原本以为比较麻烦，所以没有把恢复官网放到自己任务的最优
+    
+    </summary>
+    
+      <category term="技术" scheme="http://lekeopen.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="网络安全" scheme="http://lekeopen.com/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="运维问题" scheme="http://lekeopen.com/tags/%E8%BF%90%E7%BB%B4%E9%97%AE%E9%A2%98/"/>
+    
+      <category term="程序漏洞" scheme="http://lekeopen.com/tags/%E7%A8%8B%E5%BA%8F%E6%BC%8F%E6%B4%9E/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于天水跳蚤session的问题</title>
+    <link href="http://lekeopen.com/2016/05/%E5%85%B3%E4%BA%8E%E5%A4%A9%E6%B0%B4%E8%B7%B3%E8%9A%A4session%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>http://lekeopen.com/2016/05/关于天水跳蚤session的问题/</id>
+    <published>2016-05-11T15:37:07.000Z</published>
+    <updated>2016-05-11T18:57:43.000Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;问题反反复复的出了2，3次，今天记录下解决办法。怕日后忘记&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;问题表现&quot;&gt;&lt;a href=&quot;#问题表现&quot; class=&quot;headerlink&quot; title=&quot;问题表现&quot;&gt;&lt;/a&gt;问题表现&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;登录后台输入验证码，老提示输入错误&lt;/li&gt;
+&lt;li&gt;前台登录后不显示用户登录信息   &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;解决办法&quot;&gt;&lt;a href=&quot;#解决办法&quot; class=&quot;headerlink&quot; title=&quot;解决办法&quot;&gt;&lt;/a&gt;解决办法&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;登录服务器查看 php-fpm 配置文件&lt;/li&gt;
+&lt;li&gt;查找 session.save_path 目录&lt;/li&gt;
+&lt;li&gt;进入 session 存储目录，查看该目录所有者&lt;/li&gt;
+&lt;li&gt;修复该目录所有者为当前 php 服务执行者&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;具体过程&quot;&gt;&lt;a href=&quot;#具体过程&quot; class=&quot;headerlink&quot; title=&quot;具体过程&quot;&gt;&lt;/a&gt;具体过程&lt;/h1&gt;&lt;p&gt;&lt;code&gt;cd /etc/php-fpm.d/&lt;/code&gt; &lt;em&gt;进入 php-fpm 目录&lt;/em&gt;&lt;br&gt;&lt;code&gt;vi www.conf&lt;/code&gt; &lt;em&gt;查找 php_value[session.save_path] 目录&lt;/em&gt;&lt;br&gt;&lt;code&gt;cd /var/lib/php-fpm/&lt;/code&gt;  &lt;em&gt;进入 php_value[session] 存储目录&lt;/em&gt;&lt;br&gt;&lt;code&gt;ls -la&lt;/code&gt;  &lt;em&gt;查看 session 目录所有者&lt;/em&gt;&lt;br&gt;&lt;code&gt;su root&lt;/code&gt; &lt;em&gt;切换 root 账号&lt;/em&gt;&lt;br&gt;&lt;code&gt;chown -R leke:leke session&lt;/code&gt;  &lt;em&gt;设置 session 目录所有者为 leke 组 leke 用户&lt;/em&gt;   &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;因为之前我修改过 php nginx php-fpm 默认用户&lt;br&gt;所以要把 session 目录所有者改成我设置的用户&lt;br&gt;php 才有权限执行 session 会话&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;问题反反复复的出了2，3次，今天记录下解决办法。怕日后忘记&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;问题表现&quot;&gt;&lt;a href=&quot;#问题表现&quot; class=&quot;headerlink&quot; title=&quot;问题表现&quot;&gt;&lt;/a&gt;问
+    
+    </summary>
+    
+      <category term="技术" scheme="http://lekeopen.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="运维备忘" scheme="http://lekeopen.com/tags/%E8%BF%90%E7%BB%B4%E5%A4%87%E5%BF%98/"/>
+    
+      <category term="问题解决" scheme="http://lekeopen.com/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于微信</title>
+    <link href="http://lekeopen.com/2016/05/%E5%85%B3%E4%BA%8E%E5%BE%AE%E4%BF%A1/"/>
+    <id>http://lekeopen.com/2016/05/关于微信/</id>
+    <published>2016-05-02T17:46:44.000Z</published>
+    <updated>2016-05-02T19:43:15.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://source.free-e.net/about-weixin.jpg&quot; alt=&quot;关于微信&quot; title=&quot;关于微信&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这篇文章主要想说说微信在我的世界里的样子。&lt;br&gt;最近一直再思考，想写一篇关于我对微信的一些看法。&lt;br&gt;一直再忙，抽不出时间。&lt;br&gt;现在总算有点时间了。再不写记忆就不清晰了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;微信的发展&quot;&gt;&lt;a href=&quot;#微信的发展&quot; class=&quot;headerlink&quot; title=&quot;微信的发展&quot;&gt;&lt;/a&gt;微信的发展&lt;/h1&gt;&lt;p&gt;微信首先是一个很伟大的互联网社交工具，在这里必须向微信的缔造者张小龙致敬。&lt;br&gt;微信拉近了我们的距离，方便了我们的生活，同时也为我们找到了失散多年的“小伙伴”。&lt;br&gt;这几年微信一直很火，微信里好友从朋友、同学发展到了亲人、同事、领导，业务伙伴等。&lt;br&gt;由于我们微信的好友队伍再不断壮大，我们的朋友圈也不断在延伸。&lt;br&gt;同时伴随的是每个人的社交圈也在无限扩大中。&lt;br&gt;对于以前一直封闭的有限的社交圈来说，这无疑是件好事。&lt;br&gt;但正因为微信好友里队伍不断再壮大。&lt;br&gt;微信所承受的责任也就越来越多。担负的历史使命也越来越重。&lt;/p&gt;
+&lt;h1 id=&quot;我的观点&quot;&gt;&lt;a href=&quot;#我的观点&quot; class=&quot;headerlink&quot; title=&quot;我的观点&quot;&gt;&lt;/a&gt;我的观点&lt;/h1&gt;&lt;p&gt;对于微信，对于我们来说这并不是件好事。&lt;br&gt;微信原本是代替短信和电话的一种社交沟通工具。&lt;br&gt;原本只是人与人之间的一种交流沟通的工具。&lt;br&gt;但现在通过腾讯自家和许多第三方开发者，让微信变得越来越不“纯洁”。  &lt;/p&gt;
+&lt;h2 id=&quot;“不纯洁的表现”&quot;&gt;&lt;a href=&quot;#“不纯洁的表现”&quot; class=&quot;headerlink&quot; title=&quot;“不纯洁的表现”&quot;&gt;&lt;/a&gt;“不纯洁的表现”&lt;/h2&gt;&lt;h3 id=&quot;在朋友圈里各种“卖”&quot;&gt;&lt;a href=&quot;#在朋友圈里各种“卖”&quot; class=&quot;headerlink&quot; title=&quot;在朋友圈里各种“卖”&quot;&gt;&lt;/a&gt;在朋友圈里各种“卖”&lt;/h3&gt;&lt;p&gt;关于各种卖，这是我最反对的。因为微信原本就不是卖商品的地方。&lt;br&gt;通过微信朋友圈，突然发现好多亲朋好友摇身一变从一个消费者变成了卖家。&lt;br&gt;在朋友圈里每天都有朋友发布着各种玲琅满目的商品，貌似我们的朋友圈不知从何时起也变成了一个“百货商场”，各种叫卖各种商品Show。卖衣服，卖化妆品，卖减肥产品，代购各种  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;天下没有免费的午餐，大多卖东西个人基本都是0投入，对于一个商人来说。一分钱的成本都不用投入的话。你真的可以赚到钱吗？  &lt;/li&gt;
+&lt;li&gt;大家细想一下，哪家知名商品会在微信里卖？&lt;br&gt;那在微信里卖的都是些什么东西呢？ 质量如何保证？  &lt;/li&gt;
+&lt;li&gt;微信必定不是专业的商城，首先微信不会对任何商品提供保障。&lt;br&gt;所有通过微信产生的交易，都属于个人对个人的行为。如果一旦出现问题，那么提供保障的是谁？卖家还是卖家的上级还是商品的生产方呢？必定大多微信里的好友都是自己的朋友。一旦出现问题作为大多都是无成本投入的人，真的能负责的起？&lt;br&gt;某宝再怎么不好，再怎么假货泛滥。但总是专业的平台，也有专业的相关服务支持。退货总有人管吧？有一定监督体系吧？这些专业网上商城提供支持服务。微信都不会提供。&lt;/li&gt;
+&lt;li&gt;至于一些其他关于卖的猫腻感兴趣的朋友自行百度。&lt;br&gt;关于什么面膜什么的，网上有很多文章解密披露的。其他还有更多。  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;各种“嗮”&quot;&gt;&lt;a href=&quot;#各种“嗮”&quot; class=&quot;headerlink&quot; title=&quot;各种“嗮”&quot;&gt;&lt;/a&gt;各种“嗮”&lt;/h3&gt;&lt;p&gt;各种晒，这个不多说。晒就是宣传自己。这是个人自由。&lt;br&gt;但通过自我宣传，通过各种晒也可以从一个侧面反应出一个人层次、喜好、文化、信仰等诸多。&lt;/p&gt;
+&lt;h3 id=&quot;各种“转发”&quot;&gt;&lt;a href=&quot;#各种“转发”&quot; class=&quot;headerlink&quot; title=&quot;各种“转发”&quot;&gt;&lt;/a&gt;各种“转发”&lt;/h3&gt;&lt;p&gt;关于各种转发，由于年龄、男女、文化等不同因素转发的内容也五花八门，真真假假、有用无用、有意无意。这个需要自行分辨，自行过滤。&lt;/p&gt;
+&lt;h3 id=&quot;做推广宣传&quot;&gt;&lt;a href=&quot;#做推广宣传&quot; class=&quot;headerlink&quot; title=&quot;做推广宣传&quot;&gt;&lt;/a&gt;做推广宣传&lt;/h3&gt;&lt;p&gt;这个作为现在很多企业商家的一种商业手段，产品宣传推广平台。&lt;br&gt;原则要适度适量，能起到一定作用。但如果做过了，必得其反。&lt;/p&gt;
+&lt;h3 id=&quot;微信代替App&quot;&gt;&lt;a href=&quot;#微信代替App&quot; class=&quot;headerlink&quot; title=&quot;微信代替App&quot;&gt;&lt;/a&gt;微信代替App&lt;/h3&gt;&lt;p&gt;现在在微信里做服务的互联网产品也越来越多，很多都有代替App之意。&lt;br&gt;这个只能一分为二的看待，也有很多互联网产品文章做了很深的分析。App和微信应用哪个更好？&lt;br&gt;这个要根据产品的特点选择相对的平台，App和微信是两种不同的平台。&lt;br&gt;但无论如何，微信不可能代替APP,各有千秋各有所长。&lt;br&gt;鱼和熊掌不可兼得，如果重视微信服务级应用必定会引流APP用户的。&lt;br&gt;我个人建议，微信只是个社交沟通工具。不理应用于产品服务。只作为企业和用户之间沟通交流桥梁便好。&lt;/p&gt;
+&lt;h2 id=&quot;一些建议&quot;&gt;&lt;a href=&quot;#一些建议&quot; class=&quot;headerlink&quot; title=&quot;一些建议&quot;&gt;&lt;/a&gt;一些建议&lt;/h2&gt;&lt;p&gt;如果有用微信个人账号做商业活动的朋友，还是建议用微信公众账号选择合适的类型的微信公众号去做相对应的服务。&lt;br&gt;不同的类型微信公众平台账号合适不同人群和企业的不同服务。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这个做个小广告，有如此方面疑问的朋友可以与我联系。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;后面的话&quot;&gt;&lt;a href=&quot;#后面的话&quot; class=&quot;headerlink&quot; title=&quot;后面的话&quot;&gt;&lt;/a&gt;后面的话&lt;/h1&gt;&lt;p&gt;对于越来越臃肿的微信，承受越来越大的压力的微信。&lt;br&gt;如何发展这个不是我考虑的问题。&lt;br&gt;但对于每天离不开微信的朋友，希望能给予些帮助。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://source.free-e.net/about-weixin.jpg&quot; alt=&quot;关于微信&quot; title=&quot;关于微信&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这篇文章主要想说说微信在我的世界里的样子。&lt;br&gt;最近一直再思考，想写一篇关于
+    
+    </summary>
+    
+      <category term="观点" scheme="http://lekeopen.com/categories/%E8%A7%82%E7%82%B9/"/>
+    
+    
+      <category term="互联网产品" scheme="http://lekeopen.com/tags/%E4%BA%92%E8%81%94%E7%BD%91%E4%BA%A7%E5%93%81/"/>
+    
+      <category term="微信" scheme="http://lekeopen.com/tags/%E5%BE%AE%E4%BF%A1/"/>
+    
+      <category term="个人观点" scheme="http://lekeopen.com/tags/%E4%B8%AA%E4%BA%BA%E8%A7%82%E7%82%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git 命令参数</title>
+    <link href="http://lekeopen.com/2016/05/git-%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0/"/>
+    <id>http://lekeopen.com/2016/05/git-命令参数/</id>
+    <published>2016-05-01T19:18:32.000Z</published>
+    <updated>2016-05-03T13:10:34.000Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;git-clone-lt-远程git仓库地址-gt&quot;&gt;&lt;a href=&quot;#git-clone-lt-远程git仓库地址-gt&quot; class=&quot;headerlink&quot; title=&quot;git clone &amp;lt;远程git仓库地址&amp;gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;git clone &amp;lt;远程git仓库地址&amp;gt;&lt;/code&gt;&lt;/h1&gt;&lt;p&gt;克隆远程项目&lt;/p&gt;
+&lt;h2 id=&quot;git-clone-b-lt-远程分支名-gt-lt-远程git仓库地址-gt&quot;&gt;&lt;a href=&quot;#git-clone-b-lt-远程分支名-gt-lt-远程git仓库地址-gt&quot; class=&quot;headerlink&quot; title=&quot;git clone -b &amp;lt;远程分支名&amp;gt; &amp;lt;远程git仓库地址&amp;gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;git clone -b &amp;lt;远程分支名&amp;gt; &amp;lt;远程git仓库地址&amp;gt;&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;克隆远程分支名&lt;/p&gt;
+&lt;h1 id=&quot;git-branch&quot;&gt;&lt;a href=&quot;#git-branch&quot; class=&quot;headerlink&quot; title=&quot;git branch&quot;&gt;&lt;/a&gt;&lt;code&gt;git branch&lt;/code&gt;&lt;/h1&gt;&lt;p&gt;列出本地已经存在的分支&lt;/p&gt;
+&lt;h2 id=&quot;git-branch-r&quot;&gt;&lt;a href=&quot;#git-branch-r&quot; class=&quot;headerlink&quot; title=&quot;git branch -r&quot;&gt;&lt;/a&gt;&lt;code&gt;git branch -r&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;列出远程分支&lt;/p&gt;
+&lt;h2 id=&quot;git-branch-a&quot;&gt;&lt;a href=&quot;#git-branch-a&quot; class=&quot;headerlink&quot; title=&quot;git branch -a&quot;&gt;&lt;/a&gt;&lt;code&gt;git branch -a&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;列出本地分支和远程分支&lt;/p&gt;
+&lt;h2 id=&quot;git-branch-lt-分支名-gt&quot;&gt;&lt;a href=&quot;#git-branch-lt-分支名-gt&quot; class=&quot;headerlink&quot; title=&quot;git branch &amp;lt;分支名&amp;gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;git branch &amp;lt;分支名&amp;gt;&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;创建新的分支&lt;/p&gt;
+&lt;h2 id=&quot;git-branch-m-lt-旧分支名-gt-lt-新分支名-gt&quot;&gt;&lt;a href=&quot;#git-branch-m-lt-旧分支名-gt-lt-新分支名-gt&quot; class=&quot;headerlink&quot; title=&quot;git branch -m &amp;lt;旧分支名&amp;gt; &amp;lt;新分支名&amp;gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;git branch -m &amp;lt;旧分支名&amp;gt; &amp;lt;新分支名&amp;gt;&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;重命名分支&lt;/p&gt;
+&lt;h2 id=&quot;git-branch-d-lt-分支名-gt&quot;&gt;&lt;a href=&quot;#git-branch-d-lt-分支名-gt&quot; class=&quot;headerlink&quot; title=&quot;git branch -d &amp;lt;分支名&amp;gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;git branch -d &amp;lt;分支名&amp;gt;&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;删除分支&lt;/p&gt;
+&lt;h2 id=&quot;git-branch-d-r-lt-分支名-gt&quot;&gt;&lt;a href=&quot;#git-branch-d-r-lt-分支名-gt&quot; class=&quot;headerlink&quot; title=&quot;git branch -d -r &amp;lt;分支名&amp;gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;git branch -d -r &amp;lt;分支名&amp;gt;&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;删除远程分支&lt;/p&gt;
+&lt;h2 id=&quot;git-branch-v&quot;&gt;&lt;a href=&quot;#git-branch-v&quot; class=&quot;headerlink&quot; title=&quot;git branch -v&quot;&gt;&lt;/a&gt;&lt;code&gt;git branch -v&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;显示分支最后提交&lt;/p&gt;
+&lt;h1 id=&quot;git-checkout&quot;&gt;&lt;a href=&quot;#git-checkout&quot; class=&quot;headerlink&quot; title=&quot;git checkout&quot;&gt;&lt;/a&gt;&lt;code&gt;git checkout&lt;/code&gt;&lt;/h1&gt;&lt;p&gt;切换分支&lt;/p&gt;
+&lt;h2 id=&quot;git-checkout-lt-分支名-gt&quot;&gt;&lt;a href=&quot;#git-checkout-lt-分支名-gt&quot; class=&quot;headerlink&quot; title=&quot;git checkout &amp;lt;分支名&amp;gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;git checkout &amp;lt;分支名&amp;gt;&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;切换具体分支&lt;/p&gt;
+&lt;h2 id=&quot;git-checkout-b-lt-分支名-gt&quot;&gt;&lt;a href=&quot;#git-checkout-b-lt-分支名-gt&quot; class=&quot;headerlink&quot; title=&quot;git checkout -b &amp;lt;分支名&amp;gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;git checkout -b &amp;lt;分支名&amp;gt;&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;新建分支切换该分支&lt;/p&gt;
+&lt;h3 id=&quot;git-checkout-b-lt-分支名a-gt-lt-远程名-gt-lt-分支名a-gt&quot;&gt;&lt;a href=&quot;#git-checkout-b-lt-分支名a-gt-lt-远程名-gt-lt-分支名a-gt&quot; class=&quot;headerlink&quot; title=&quot;git checkout -b &amp;lt;分支名a&amp;gt; &amp;lt;远程名&amp;gt;/&amp;lt;分支名a&amp;gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;git checkout -b &amp;lt;分支名a&amp;gt; &amp;lt;远程名&amp;gt;/&amp;lt;分支名a&amp;gt;&lt;/code&gt;&lt;/h3&gt;&lt;p&gt;本地新建分支a 与远程名/分支a 对应&lt;/p&gt;
+&lt;h2 id=&quot;git-checkout-t-lt-远程名-gt-lt-分支a-gt&quot;&gt;&lt;a href=&quot;#git-checkout-t-lt-远程名-gt-lt-分支a-gt&quot; class=&quot;headerlink&quot; title=&quot;git checkout -t &amp;lt;远程名&amp;gt;/&amp;lt;分支a&amp;gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;git checkout -t &amp;lt;远程名&amp;gt;/&amp;lt;分支a&amp;gt;&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;默认本地建立一个和远程分支a 一样的分支a&lt;/p&gt;
+&lt;h1 id=&quot;git-merge-lt-分支名-gt&quot;&gt;&lt;a href=&quot;#git-merge-lt-分支名-gt&quot; class=&quot;headerlink&quot; title=&quot;git merge &amp;lt;分支名&amp;gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;git merge &amp;lt;分支名&amp;gt;&lt;/code&gt;&lt;/h1&gt;&lt;p&gt;合并分支到当前分支中&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;git-clone-lt-远程git仓库地址-gt&quot;&gt;&lt;a href=&quot;#git-clone-lt-远程git仓库地址-gt&quot; class=&quot;headerlink&quot; title=&quot;git clone &amp;lt;远程git仓库地址&amp;gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;git
+    
+    </summary>
+    
+      <category term="技术" scheme="http://lekeopen.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Git命令" scheme="http://lekeopen.com/tags/Git%E5%91%BD%E4%BB%A4/"/>
+    
+      <category term="开发参考" scheme="http://lekeopen.com/tags/%E5%BC%80%E5%8F%91%E5%8F%82%E8%80%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vagrant的问题的汇总（不定时更新）</title>
+    <link href="http://lekeopen.com/2016/04/Vagrant%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E6%B1%87%E6%80%BB%EF%BC%88%E4%B8%8D%E5%AE%9A%E6%9C%9F%E6%9B%B4%E6%96%B0%EF%BC%89/"/>
+    <id>http://lekeopen.com/2016/04/Vagrant的问题的汇总（不定期更新）/</id>
+    <published>2016-04-28T21:19:04.000Z</published>
+    <updated>2016-05-02T17:43:01.000Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;启动问题&quot;&gt;&lt;a href=&quot;#启动问题&quot; class=&quot;headerlink&quot; title=&quot;启动问题&quot;&gt;&lt;/a&gt;启动问题&lt;/h1&gt;&lt;h2 id=&quot;关于-default-Warning-Authentication-failure-Retrying…&quot;&gt;&lt;a href=&quot;#关于-default-Warning-Authentication-failure-Retrying…&quot; class=&quot;headerlink&quot; title=&quot;关于 default: Warning: Authentication failure. Retrying…&quot;&gt;&lt;/a&gt;关于 default: Warning: Authentication failure. Retrying…&lt;/h2&gt;&lt;h3 id=&quot;现象&quot;&gt;&lt;a href=&quot;#现象&quot; class=&quot;headerlink&quot; title=&quot;现象&quot;&gt;&lt;/a&gt;现象&lt;/h3&gt;&lt;p&gt; 再用 &lt;code&gt;vagrant up&lt;/code&gt; 启动虚拟机 或者 &lt;code&gt;vagrant reload&lt;/code&gt; 重启虚拟机的时候&lt;br&gt; 一直不停的报错 default: Warning: Authentication failure. Retrying…&lt;/p&gt;
+&lt;h3 id=&quot;解决&quot;&gt;&lt;a href=&quot;#解决&quot; class=&quot;headerlink&quot; title=&quot;解决&quot;&gt;&lt;/a&gt;解决&lt;/h3&gt;&lt;p&gt;在 Vagrantfile 这个文件里面添加了这两行，然后关掉关掉虚拟机。&lt;br&gt;&lt;code&gt;config.ssh.username = &amp;quot;vagrant&amp;quot;&lt;/code&gt;&lt;br&gt;&lt;code&gt;config.ssh.password = &amp;quot;vagrant&amp;quot;&lt;/code&gt;&lt;br&gt;注释掉这两行代码&lt;br&gt;&lt;code&gt;vagrant reload&lt;/code&gt;  重启虚拟机，问题解决。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;启动问题&quot;&gt;&lt;a href=&quot;#启动问题&quot; class=&quot;headerlink&quot; title=&quot;启动问题&quot;&gt;&lt;/a&gt;启动问题&lt;/h1&gt;&lt;h2 id=&quot;关于-default-Warning-Authentication-failure-Retrying…&quot;&gt;&lt;a h
+    
+    </summary>
+    
+      <category term="技术" scheme="http://lekeopen.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="运维相关" scheme="http://lekeopen.com/tags/%E8%BF%90%E7%BB%B4%E7%9B%B8%E5%85%B3/"/>
+    
+      <category term="Vagrant" scheme="http://lekeopen.com/tags/Vagrant/"/>
+    
+      <category term="虚拟机" scheme="http://lekeopen.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git-开发者必备的技能</title>
+    <link href="http://lekeopen.com/2016/04/Git-%E5%BC%80%E5%8F%91%E8%80%85%E5%BF%85%E5%A4%87%E7%9A%84%E6%8A%80%E8%83%BD/"/>
+    <id>http://lekeopen.com/2016/04/Git-开发者必备的技能/</id>
+    <published>2016-04-26T05:44:19.000Z</published>
+    <updated>2016-05-02T17:42:41.000Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;为什么学习-git&quot;&gt;&lt;a href=&quot;#为什么学习-git&quot; class=&quot;headerlink&quot; title=&quot;为什么学习 git&quot;&gt;&lt;/a&gt;为什么学习 git&lt;/h1&gt;&lt;p&gt;最近一直在学习 git,为的是方便开发和管理代码。&lt;br&gt;git 也是作为一名码农和项目管理者应该所具备的技能。&lt;br&gt;通过一段时间的学习现在 git 也已经正式应用在我们的项目当中了。&lt;/p&gt;
+&lt;h1 id=&quot;git-对于我的实际应用&quot;&gt;&lt;a href=&quot;#git-对于我的实际应用&quot; class=&quot;headerlink&quot; title=&quot;git 对于我的实际应用&quot;&gt;&lt;/a&gt;git 对于我的实际应用&lt;/h1&gt;&lt;h2 id=&quot;案例：天水跳蚤&quot;&gt;&lt;a href=&quot;#案例：天水跳蚤&quot; class=&quot;headerlink&quot; title=&quot;案例：天水跳蚤&quot;&gt;&lt;/a&gt;案例：天水跳蚤&lt;/h2&gt;&lt;h3 id=&quot;案例介绍&quot;&gt;&lt;a href=&quot;#案例介绍&quot; class=&quot;headerlink&quot; title=&quot;案例介绍&quot;&gt;&lt;/a&gt;案例介绍&lt;/h3&gt;&lt;p&gt;天水跳蚤是一个关于本地同城的闲置物品发布平台。&lt;/p&gt;
+&lt;h3 id=&quot;具体应用&quot;&gt;&lt;a href=&quot;#具体应用&quot; class=&quot;headerlink&quot; title=&quot;具体应用&quot;&gt;&lt;/a&gt;具体应用&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;本地开发完后 push 到 bitbucket（国外代码托管平台）。&lt;/li&gt;
+&lt;li&gt;在测试环境中 pull bitbucket 上 develop 分支（项目在 bitbucket 的开发分支）&lt;/li&gt;
+&lt;li&gt;项目测试通过后，合并 bitbucket 上开发分支 develop 到主分支 master 上。&lt;/li&gt;
+&lt;li&gt;在生产环境中 pull bitbucket 上 master 分支（项目在 bitbucket 的主分支）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;优点&quot;&gt;&lt;a href=&quot;#优点&quot; class=&quot;headerlink&quot; title=&quot;优点&quot;&gt;&lt;/a&gt;优点&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;这种方案便于多人协同开发项目&lt;/li&gt;
+&lt;li&gt;便于解决多人开发中的代码冲突问题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;完善&quot;&gt;&lt;a href=&quot;#完善&quot; class=&quot;headerlink&quot; title=&quot;完善&quot;&gt;&lt;/a&gt;完善&lt;/h3&gt;&lt;p&gt;现在唯一的不足就是，每次测试项目和部署生产代码的时候都需要分别登录测试环境和生产环境 pull 把项目代码从 bitbucket 拉下来。&lt;br&gt;这样做，感觉稍微有点不太方便。&lt;br&gt;但 git 可以用 git hock 功能自动同步 bitbucket 代码到测试环境和开发环境的。这是我接下来要做的。&lt;/p&gt;
+&lt;h1 id=&quot;后续&quot;&gt;&lt;a href=&quot;#后续&quot; class=&quot;headerlink&quot; title=&quot;后续&quot;&gt;&lt;/a&gt;后续&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;Git 作为开发者和项目管理者的必备技能.&lt;br&gt;这种生产方式是高效的。&lt;br&gt;人类只有不断的接受新事物，通过学习加以实践应用，我们才会进步。&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;为什么学习-git&quot;&gt;&lt;a href=&quot;#为什么学习-git&quot; class=&quot;headerlink&quot; title=&quot;为什么学习 git&quot;&gt;&lt;/a&gt;为什么学习 git&lt;/h1&gt;&lt;p&gt;最近一直在学习 git,为的是方便开发和管理代码。&lt;br&gt;git 也是作为一名码农和
+    
+    </summary>
+    
+      <category term="技术" scheme="http://lekeopen.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Git" scheme="http://lekeopen.com/tags/Git/"/>
+    
+      <category term="开发经验" scheme="http://lekeopen.com/tags/%E5%BC%80%E5%8F%91%E7%BB%8F%E9%AA%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>天星游乐城</title>
+    <link href="http://lekeopen.com/2016/04/%E5%A4%A9%E6%98%9F%E6%B8%B8%E4%B9%90%E5%9F%8E/"/>
+    <id>http://lekeopen.com/2016/04/天星游乐城/</id>
+    <published>2016-04-10T14:28:18.000Z</published>
+    <updated>2016-04-10T15:41:32.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://source.free-e.net/tianxing.JPG&quot; alt=&quot;天星游乐城&quot; title=&quot;秦州店&quot;&gt;&lt;/p&gt;
+&lt;p&gt;今天等宝宝玩，看到这样的一番景象心里感觉丝丝的苦逼。&lt;br&gt;宝宝们已经进去了，又不想坏了宝宝们的心情只能将就让他们的玩了。&lt;br&gt;在等宝宝的时间里，我一直反反复复思考着这样一个问题。&lt;br&gt;为什么这么烂的一个地方，却有这么多家长带孩子来玩呢？&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;11年前后，和朋友商量在天水开一家儿童游乐城。位置在大商场顶楼或者底楼。因为那时天水没有兰天5楼那家和天星。但。。。（此处省略几千字）反正我没开成。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;后面有了兰天5楼那家，又有了解放路那家（这家有点脏乱带娃去过一次）。随后麦积区有了天星。偶尔一次团购看见七里敦天宝广场有一家。去过一次因为太脏就再没有过去。&lt;/p&gt;
+&lt;p&gt;宝宝们现在也3岁多了，天水大大小小能玩的游乐场也都玩到了。&lt;br&gt;相比之前，兰天5楼那家除了价格当时最高，但在卫生和管理上应该是最好的了。（百货大楼对面原金长城浴池那家还没开）&lt;/p&gt;
+&lt;p&gt;至于天星，麦积区那家是目前天水最大的。但可能因为价格相对来说便宜点。每次带宝宝去感觉都和逛集市一样，人超多。那么多人，在管理和卫生上也就差很多。&lt;/p&gt;
+&lt;p&gt;后面天星在三兴购物中心（市政府对面）开了一家，第一次去的时候感觉地方比麦积区的天星地方小好多，玩的设施也少。但依旧人超多。&lt;br&gt;去过2次后，有机会玩还是带宝宝们去麦积区的那个。因为办会员了。&lt;/p&gt;
+&lt;p&gt;去年百货大楼对面又开一家，价格有点贵。但环境没得说。最近带宝宝去玩的最多也是百货大楼对面2楼这家。环境相对好点。&lt;/p&gt;
+&lt;p&gt;今天说天星什么活动日。就带宝宝去了。三兴购物中心已经搬到大众北路原来我记着卖灯的二楼。一上来各种人多，各种脏乱差。&lt;/p&gt;
+&lt;p&gt;走的时候，老婆说了里面的工作人员素质也太差了。保证下次再也不来了。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;天水，一个消费并不低的城市。为什么相关配套的设施和场所却如此贫瘠呢？&lt;/em&gt;&lt;/p&gt;
+&lt;h1 id=&quot;后续&quot;&gt;&lt;a href=&quot;#后续&quot; class=&quot;headerlink&quot; title=&quot;后续&quot;&gt;&lt;/a&gt;&lt;em&gt;后续&lt;/em&gt;&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;在这个城市生活了这么多年，这些年的赶脚。天水是一个充满着神秘和奇葩的地方。人再怎么喊穷，再贵的房子也有人买。有人住。全国GDP再怎么垫底，满大街奔驰、宝马、路虎、卡宴。&lt;/p&gt;
+&lt;p&gt;这里，孩子没有该去的地方。&lt;/p&gt;
+&lt;p&gt;我们没有文化产业，科技也和我们没有多大的关系&lt;/p&gt;
+&lt;p&gt;这个城市的服务依然很落后。&lt;/p&gt;
+&lt;p&gt;我们的工资依然低的很可怜&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://source.free-e.net/tianxing.JPG&quot; alt=&quot;天星游乐城&quot; title=&quot;秦州店&quot;&gt;&lt;/p&gt;
+&lt;p&gt;今天等宝宝玩，看到这样的一番景象心里感觉丝丝的苦逼。&lt;br&gt;宝宝们已经进去了，又不想坏了宝宝们的心情只能将就让他
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://lekeopen.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="个人观点" scheme="http://lekeopen.com/tags/%E4%B8%AA%E4%BA%BA%E8%A7%82%E7%82%B9/"/>
+    
+      <category term="身边生活" scheme="http://lekeopen.com/tags/%E8%BA%AB%E8%BE%B9%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>自建Git服务器</title>
+    <link href="http://lekeopen.com/2016/04/%E8%87%AA%E5%BB%BAGit%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <id>http://lekeopen.com/2016/04/自建Git服务器/</id>
+    <published>2016-04-07T19:17:25.000Z</published>
+    <updated>2016-05-02T17:43:01.000Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;&lt;em&gt;折腾了几天，找了无数篇文章。一直都在失败。找了很多 hooks 处理方法, 都不能同步代码文件到指定的 web 目录去。但今天下午终于搞定了。有点小开心小激动。&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;Git是什么？&quot;&gt;&lt;a href=&quot;#Git是什么？&quot; class=&quot;headerlink&quot; title=&quot;Git是什么？&quot;&gt;&lt;/a&gt;Git是什么？&lt;/h1&gt;&lt;p&gt;简单说一个版本控制工具，具体是什么，为什么要用 Git 大家可以问百度。&lt;/p&gt;
+&lt;h1 id=&quot;为什么非要架设自己的-Git-服务器呢？&quot;&gt;&lt;a href=&quot;#为什么非要架设自己的-Git-服务器呢？&quot; class=&quot;headerlink&quot; title=&quot;为什么非要架设自己的 Git 服务器呢？&quot;&gt;&lt;/a&gt;为什么非要架设自己的 Git 服务器呢？&lt;/h1&gt;&lt;h2 id=&quot;1-代码私有化&quot;&gt;&lt;a href=&quot;#1-代码私有化&quot; class=&quot;headerlink&quot; title=&quot;1. 代码私有化&quot;&gt;&lt;/a&gt;1. 代码私有化&lt;/h2&gt;&lt;p&gt;关于代码托管的网站，国內外有好多。比如国外的 github，bitbucket。国内的码云，Coding 都是此类专业的代码托管服务网站。如果你项目完全开源，可以把代码拿出来和大家的分享的话。那上面这些网站无疑是最佳选择。如果你的项目不是开源项目，又不想被公开代码，那就需要上面这些网站所提供的私有服务。大多专业代码托管网站私有服务都是要收费的。&lt;br&gt;bitbucket 是外国免费提供私有服务的专业代码托管网站，国内外很多程序员都在用。但据说在国内被墙。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;刚测试可以访问，虽然国外的很多服务都比国内专业，质量要好。但缺点就是国外网站一般访问速度不如国内快。&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;但即使有些代码托管商免费提供私有服务，也会有诸多限制，开发者并不能自由无拘无束的管理自己的项目代码。&lt;/p&gt;
+&lt;h2 id=&quot;2-代替传统的FTP和SCP&quot;&gt;&lt;a href=&quot;#2-代替传统的FTP和SCP&quot; class=&quot;headerlink&quot; title=&quot;2. 代替传统的FTP和SCP&quot;&gt;&lt;/a&gt;2. 代替传统的FTP和SCP&lt;/h2&gt;&lt;p&gt;但很多项目，客户网站都有自己的服务器，那就并不需要专业的代码托管了。但在之前的开发中，总有这样的困惑。每次部署到客户的服务器上的时候，测试完代码后都要再用FTP或者用命令行SCP上传至服务器。但还是觉得不太方便。也不利于代码的管理。&lt;/p&gt;
+&lt;h2 id=&quot;3-利用git管理你生产环境代码&quot;&gt;&lt;a href=&quot;#3-利用git管理你生产环境代码&quot; class=&quot;headerlink&quot; title=&quot;3. 利用git管理你生产环境代码&quot;&gt;&lt;/a&gt;3. 利用git管理你生产环境代码&lt;/h2&gt;&lt;p&gt;可以很高效利用 git 管理项目的代码，最后再一键部署到自己的各种环境当中。&lt;/p&gt;
+&lt;h1 id=&quot;架设Git服务器步骤&quot;&gt;&lt;a href=&quot;#架设Git服务器步骤&quot; class=&quot;headerlink&quot; title=&quot;架设Git服务器步骤&quot;&gt;&lt;/a&gt;架设Git服务器步骤&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;配置服务器 Git 仓库&lt;/li&gt;
+&lt;li&gt;配置 Hooks ，让项目代码和Web服务目录代码同步。&lt;/li&gt;
+&lt;li&gt;配置客户端和服务器 Git 仓库连接。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;点击查看&lt;a href=&quot;http://blog.newbmiao.com/2014/12/28/build-your-git-server-on-linux.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;具体方法&lt;/a&gt; （测试成功）&lt;/em&gt;&lt;/p&gt;
+&lt;h1 id=&quot;后续&quot;&gt;&lt;a href=&quot;#后续&quot; class=&quot;headerlink&quot; title=&quot;后续&quot;&gt;&lt;/a&gt;后续&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;高效再于折腾，我们不断再强大再成熟再走向更专业的道路上。&lt;br&gt;如有疑问大家一起讨论交流。&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;&lt;em&gt;折腾了几天，找了无数篇文章。一直都在失败。找了很多 hooks 处理方法, 都不能同步代码文件到指定的 w
+    
+    </summary>
+    
+      <category term="技术" scheme="http://lekeopen.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Git" scheme="http://lekeopen.com/tags/Git/"/>
+    
+      <category term="开发经验" scheme="http://lekeopen.com/tags/%E5%BC%80%E5%8F%91%E7%BB%8F%E9%AA%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>立业初篇</title>
+    <link href="http://lekeopen.com/2016/04/%E7%AB%8B%E4%B8%9A%E5%88%9D%E5%81%8F/"/>
+    <id>http://lekeopen.com/2016/04/立业初偏/</id>
+    <published>2016-04-02T09:48:51.000Z</published>
+    <updated>2016-04-02T09:53:38.000Z</updated>
+    
+    <content type="html">&lt;p&gt;愚人，已到而立之年。成家，但未立业。&lt;br&gt;识世界，但不明交际之礼。&lt;br&gt;自幼，内向。不善口舌之技。&lt;br&gt;自习书之时，贪玩成性。未高榜提名。&lt;br&gt;青年吊儿郎当，迷于琴弦知音。&lt;br&gt;便学以音乐追逐于文艺，不料步入为人师表之列。&lt;br&gt;因年少在外游学，见于大千世界之繁华。&lt;br&gt;便一心想有所一番作为。&lt;br&gt;创办网站社区，着迷一时。&lt;br&gt;后感靡靡之音之真实，现实之残酷。&lt;br&gt;又创办名为“天水制造”之团队，开创一番弦音之天地。&lt;br&gt;举办“自由回归”之名演出，兴于一时。&lt;br&gt;后因，工作、身体、人情、环境等诸多因素，停止先前一切之所为。&lt;br&gt;而后成家，深受金钱之苦甜。&lt;br&gt;便从此苦寻生财之道路，后识得志同之前辈。&lt;br&gt;酒吧夜场之事业开启,&lt;br&gt;后因性格与人性相差甚远，而退之。&lt;br&gt;如今，小观之世界。小阅文章之数篇。&lt;br&gt;猛如当头棍棒一番，豁然觉得世界之变。&lt;br&gt;互联网之兴盛强大，如同当年工业革命之势。&lt;br&gt;必有改变世界之根本。&lt;br&gt;便深知而立之年理因有所作为一番。&lt;br&gt;无昼无夜，投身于其中。&lt;br&gt;苦修于互联网之技能，自甘苦。&lt;br&gt;自嘲为之创业之事，虽不是改变世界之大事。&lt;br&gt;但对愚人而言却是人之热情，少年之梦想。&lt;br&gt;追求生活世界精彩之向往。&lt;br&gt;其中不明大意者甚多，难免于孤独之情理，&lt;br&gt;作为前无人之理解，只能身体而力行。&lt;br&gt;以作师范，望共创一番之事业。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;愚人，已到而立之年。成家，但未立业。&lt;br&gt;识世界，但不明交际之礼。&lt;br&gt;自幼，内向。不善口舌之技。&lt;br&gt;自习书之时，贪玩成性。未高榜提名。&lt;br&gt;青年吊儿郎当，迷于琴弦知音。&lt;br&gt;便学以音乐追逐于文艺，不料步入为人师表之列。&lt;br&gt;因年少在外游学，见于大千世界之繁华
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://lekeopen.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="生活感悟" scheme="http://lekeopen.com/tags/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/"/>
+    
+      <category term="杂谈" scheme="http://lekeopen.com/tags/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>天水跳蚤即将转入后端开发阶段</title>
+    <link href="http://lekeopen.com/2015/10/%E5%A4%A9%E6%B0%B4%E8%B7%B3%E8%9A%A4%E5%8D%B3%E5%B0%86%E8%BD%AC%E5%85%A5%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E9%98%B6%E6%AE%B5/"/>
+    <id>http://lekeopen.com/2015/10/天水跳蚤即将转入后端开发阶段/</id>
+    <published>2015-10-27T04:24:52.000Z</published>
+    <updated>2016-04-02T19:45:14.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;em&gt;经过2个星期的努力，天水跳蚤即将转入后端开发阶段&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://source.free-e.net/tsflea.com-dev.png&quot; class=&quot;img-topic&quot;&gt;&lt;/p&gt;
+&lt;p&gt;经过几个星期的紧张部署，天水跳蚤的前端部署工作基本接近尾声。&lt;br&gt;接下来需要团队对天水跳蚤的功能再进行探讨，做最后确认工作。&lt;br&gt;确定功能、布局和结构后转入下一步后端开发阶段。&lt;br&gt;在后端开发阶段中，前端继续做网站美化和用户体验优化。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h2 id=&quot;前端目前待解决问题&quot;&gt;&lt;a href=&quot;#前端目前待解决问题&quot; class=&quot;headerlink&quot; title=&quot;前端目前待解决问题&quot;&gt;&lt;/a&gt;前端目前待解决问题&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;home-search 首页搜索表单页面居中&lt;/li&gt;
+&lt;li&gt;登录和注册弹出窗口调用远程文件失效 bootstrap-&amp;gt;model-&amp;gt;remote 不起作用&lt;/li&gt;
+&lt;li&gt;home-goods-category 分类图片添加鼠标划过图片变大效果JS&lt;br&gt;参考：&lt;a href=&quot;http://www.houserentals.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.houserentals.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;用户注册和登录页面按钮动画效果&lt;br&gt;参考：&lt;a href=&quot;https://account.teambition.com/signup&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://account.teambition.com/signup&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;关于开发：&quot;&gt;&lt;a href=&quot;#关于开发：&quot; class=&quot;headerlink&quot; title=&quot;关于开发：&quot;&gt;&lt;/a&gt;关于开发：&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;前端框架：Bootstrap&lt;/li&gt;
+&lt;li&gt;前端项目创建：Yeoman&lt;/li&gt;
+&lt;li&gt;前端代码托管：coding.net&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;项目演示地址：&lt;a href=&quot;http://tsflea.coding.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;tsflea.coding.io&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;em&gt;经过2个星期的努力，天水跳蚤即将转入后端开发阶段&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://source.free-e.net/tsflea.com-dev.png&quot; class=&quot;img-topic&quot;&gt;&lt;/p&gt;
+&lt;p&gt;经过几个星期的紧张部署，天水跳
+    
+    </summary>
+    
+      <category term="公司" scheme="http://lekeopen.com/categories/%E5%85%AC%E5%8F%B8/"/>
+    
+    
+      <category term="公司项目" scheme="http://lekeopen.com/tags/%E5%85%AC%E5%8F%B8%E9%A1%B9%E7%9B%AE/"/>
+    
+      <category term="进度报告" scheme="http://lekeopen.com/tags/%E8%BF%9B%E5%BA%A6%E6%8A%A5%E5%91%8A/"/>
+    
+      <category term="天水跳蚤" scheme="http://lekeopen.com/tags/%E5%A4%A9%E6%B0%B4%E8%B7%B3%E8%9A%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>乐可官网有备案了</title>
+    <link href="http://lekeopen.com/2015/10/%E4%B9%90%E5%8F%AF%E5%AE%98%E7%BD%91%E6%9C%89%E5%A4%87%E6%A1%88%E4%BA%86/"/>
+    <id>http://lekeopen.com/2015/10/乐可官网有备案了/</id>
+    <published>2015-10-01T04:46:03.000Z</published>
+    <updated>2016-04-02T18:08:21.000Z</updated>
+    
+    <content type="html">&lt;p&gt;阿里做事就是效率，申请没几天。已经拿到备案号了。&lt;br&gt;乐可有自己的备案了，官网正在建设中。。。&lt;br&gt;以后用lekee.cc 就是访问公司的正式官方了～～&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;阿里做事就是效率，申请没几天。已经拿到备案号了。&lt;br&gt;乐可有自己的备案了，官网正在建设中。。。&lt;br&gt;以后用lekee.cc 就是访问公司的正式官方了～～&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="公司" scheme="http://lekeopen.com/categories/%E5%85%AC%E5%8F%B8/"/>
+    
+    
+      <category term="创立历程" scheme="http://lekeopen.com/tags/%E5%88%9B%E7%AB%8B%E5%8E%86%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端大体结构确定</title>
+    <link href="http://lekeopen.com/2015/09/%E5%89%8D%E7%AB%AF%E5%A4%A7%E4%BD%93%E7%BB%93%E6%9E%84%E7%A1%AE%E5%AE%9A/"/>
+    <id>http://lekeopen.com/2015/09/前端大体结构确定/</id>
+    <published>2015-09-21T14:38:27.000Z</published>
+    <updated>2016-04-02T18:08:18.000Z</updated>
+    
+    <content type="html">&lt;p&gt;跳蚤的大题结构已经确定，前端代码也已经 git coding.net 上去了。&lt;br&gt;基本页面已经确定&lt;br&gt;基本栏目已经确定&lt;br&gt;基本功能已经确定&lt;br&gt;现在网站前端还有一些细节要做，还需要几个js。&lt;br&gt;比如物品展示，我准备用瀑布流&lt;br&gt;navbar 我准备用下拉自动影藏的效果。&lt;/p&gt;
+&lt;p&gt;还有大体颜色也会做一些调整。&lt;/p&gt;
+&lt;p&gt;关于功能，用户发布物品，收藏物品、文章和活动&lt;br&gt;关于联系卖家可以用站内私信。&lt;br&gt;关于卖家信誉度的问题，可以用积分的方式。&lt;br&gt;一切都遵循从实际出发、尽可能的简化流程。&lt;br&gt;每个人的时间和生命都是宝贵的，&lt;br&gt;不必要浪费的时间我们绝对要珍惜！&lt;/p&gt;
+&lt;p&gt;演示1：&lt;a href=&quot;http://tsflea.coding.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://tsflea.coding.io&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;演示2：&lt;a href=&quot;http://tsflea-dev.coding.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://tsflea-dev.coding.io&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;项目仍在寻求感兴趣的小伙伴&lt;br&gt;如果你感兴趣请来电或发email&lt;br&gt;对天水跳蚤有什么建议发邮件&lt;br&gt;&lt;a href=&quot;&amp;#109;&amp;#x61;&amp;#x69;&amp;#108;&amp;#x74;&amp;#x6f;&amp;#58;&amp;#x73;&amp;#x65;&amp;#x72;&amp;#x76;&amp;#105;&amp;#x63;&amp;#x65;&amp;#64;&amp;#x74;&amp;#115;&amp;#x66;&amp;#108;&amp;#x65;&amp;#x61;&amp;#46;&amp;#99;&amp;#111;&amp;#x6d;&quot;&gt;&amp;#x73;&amp;#x65;&amp;#x72;&amp;#x76;&amp;#105;&amp;#x63;&amp;#x65;&amp;#64;&amp;#x74;&amp;#115;&amp;#x66;&amp;#108;&amp;#x65;&amp;#x61;&amp;#46;&amp;#99;&amp;#111;&amp;#x6d;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;跳蚤的大题结构已经确定，前端代码也已经 git coding.net 上去了。&lt;br&gt;基本页面已经确定&lt;br&gt;基本栏目已经确定&lt;br&gt;基本功能已经确定&lt;br&gt;现在网站前端还有一些细节要做，还需要几个js。&lt;br&gt;比如物品展示，我准备用瀑布流&lt;br&gt;navbar 我准备用下拉
+    
+    </summary>
+    
+      <category term="公司" scheme="http://lekeopen.com/categories/%E5%85%AC%E5%8F%B8/"/>
+    
+    
+      <category term="公司项目" scheme="http://lekeopen.com/tags/%E5%85%AC%E5%8F%B8%E9%A1%B9%E7%9B%AE/"/>
+    
+      <category term="进度报告" scheme="http://lekeopen.com/tags/%E8%BF%9B%E5%BA%A6%E6%8A%A5%E5%91%8A/"/>
+    
+      <category term="天水跳蚤" scheme="http://lekeopen.com/tags/%E5%A4%A9%E6%B0%B4%E8%B7%B3%E8%9A%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>天水跳蚤最新开发进度</title>
+    <link href="http://lekeopen.com/2015/09/%E5%A4%A9%E6%B0%B4%E8%B7%B3%E8%9A%A4%E6%9C%80%E6%96%B0%E5%BC%80%E5%8F%91%E8%BF%9B%E5%BA%A6/"/>
+    <id>http://lekeopen.com/2015/09/天水跳蚤最新开发进度/</id>
+    <published>2015-09-14T01:55:23.000Z</published>
+    <updated>2016-04-02T09:36:34.000Z</updated>
+    
+    <content type="html">&lt;p&gt;最近不太接单子了，这几天一直再进行天水跳蚤的开发。&lt;br&gt;前端框架网站整体用bootstrap开发，部分地方可能会用到别的。&lt;br&gt;一个庞大的项目正在进行，但目前的开发工作只有我一个人。&lt;br&gt;从网站的功能、整体布局。到现在的开发。&lt;br&gt;这个过程是漫长的。现在网站还属于前端开发阶段。&lt;br&gt;天水跳蚤是一个简单、时尚、实用的二手信息发布平台。&lt;br&gt;网站主要功能栏目 物品，活动，博客&lt;br&gt;现在活动和博客的栏目页和内容页已经完成。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;天水跳蚤寻求项目合作伙伴&lt;br&gt;感兴趣请发邮箱 &lt;a href=&quot;&amp;#109;&amp;#97;&amp;#105;&amp;#108;&amp;#116;&amp;#x6f;&amp;#58;&amp;#x72;&amp;#111;&amp;#99;&amp;#107;&amp;#x74;&amp;#x73;&amp;#64;&amp;#115;&amp;#105;&amp;#x6e;&amp;#97;&amp;#x2e;&amp;#x63;&amp;#x6f;&amp;#x6d;&quot;&gt;&amp;#x72;&amp;#111;&amp;#99;&amp;#107;&amp;#x74;&amp;#x73;&amp;#64;&amp;#115;&amp;#105;&amp;#x6e;&amp;#97;&amp;#x2e;&amp;#x63;&amp;#x6f;&amp;#x6d;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近不太接单子了，这几天一直再进行天水跳蚤的开发。&lt;br&gt;前端框架网站整体用bootstrap开发，部分地方可能会用到别的。&lt;br&gt;一个庞大的项目正在进行，但目前的开发工作只有我一个人。&lt;br&gt;从网站的功能、整体布局。到现在的开发。&lt;br&gt;这个过程是漫长的。现在网站还属于前
+    
+    </summary>
+    
+      <category term="公司" scheme="http://lekeopen.com/categories/%E5%85%AC%E5%8F%B8/"/>
+    
+    
+      <category term="公司项目" scheme="http://lekeopen.com/tags/%E5%85%AC%E5%8F%B8%E9%A1%B9%E7%9B%AE/"/>
+    
+      <category term="进度报告" scheme="http://lekeopen.com/tags/%E8%BF%9B%E5%BA%A6%E6%8A%A5%E5%91%8A/"/>
+    
+      <category term="天水跳蚤" scheme="http://lekeopen.com/tags/%E5%A4%A9%E6%B0%B4%E8%B7%B3%E8%9A%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于互联网我们离的还很远</title>
+    <link href="http://lekeopen.com/2015/09/%E5%85%B3%E4%BA%8E%E4%BA%92%E8%81%94%E7%BD%91%E6%88%91%E4%BB%AC%E7%A6%BB%E7%9A%84%E8%BF%98%E5%BE%88%E8%BF%9C/"/>
+    <id>http://lekeopen.com/2015/09/关于互联网我们离的还很远/</id>
+    <published>2015-09-10T14:46:21.000Z</published>
+    <updated>2016-04-28T21:46:35.000Z</updated>
+    
+    <content type="html">&lt;p&gt;最近很累，接了几个政府网站的活。这几个活忙下来，唯一的感觉就是，关于互联网我们还离的很远。&lt;/p&gt;
+&lt;p&gt;为什么这么说呢？首先我接的这几个活都是别人转包给我的。&lt;/p&gt;
+&lt;p&gt;所以价格很低廉。&lt;/p&gt;
+&lt;p&gt;因为之前的一个活，网站用php做的，结果服务器是windows 。因此出现了很多更本没有必要的问题。&lt;br&gt;所以这次一开始我就没有打算用php开发网站。&lt;br&gt;做了这么多政府网站的活除了价格，没有一家关心程序的。&lt;/p&gt;
+&lt;p&gt;一分价钱一分货，就是这么一个道理。&lt;br&gt;即使这些网站都用的是动易sw开发的.&lt;br&gt;但品心而论，虽然动易SW有点老，但动易的口碑一直不错的。&lt;/p&gt;
+&lt;p&gt;asp还是能满足这些客户对性能的需求。&lt;br&gt;但有个不好的现象就是，大家一致认为外观比性能重要的多。&lt;/p&gt;
+&lt;p&gt;现在有个普遍的现象就是，“硬件远远比软件重要！”&lt;br&gt;一个单位肯花上万买服务器，虽然服务器的功能只是放一个内网的网站。&lt;/p&gt;
+&lt;p&gt;但对于这个网站的开发投入也不到这个服务器的三分之一的价格。&lt;/p&gt;
+&lt;p&gt;难道服务器真的就比这个网站还要重要。&lt;/p&gt;
+&lt;p&gt;曾经我碰到一个单位客户，一个单反肯花7，8万。但对于所有的软件投入还不到这个单反的十分之一。&lt;/p&gt;
+&lt;p&gt;这个现象是普遍存在，是畸形的。&lt;/p&gt;
+&lt;p&gt;硬件只是服务于软件，软件才是真正信息化工作的核心和灵魂。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近很累，接了几个政府网站的活。这几个活忙下来，唯一的感觉就是，关于互联网我们还离的很远。&lt;/p&gt;
+&lt;p&gt;为什么这么说呢？首先我接的这几个活都是别人转包给我的。&lt;/p&gt;
+&lt;p&gt;所以价格很低廉。&lt;/p&gt;
+&lt;p&gt;因为之前的一个活，网站用php做的，结果服务器是windows 。
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://lekeopen.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="IT杂谈" scheme="http://lekeopen.com/tags/IT%E6%9D%82%E8%B0%88/"/>
+    
+      <category term="网站建设" scheme="http://lekeopen.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Virtualbox 安装win8 for mac</title>
+    <link href="http://lekeopen.com/2015/08/Virtualbox-%E5%AE%89%E8%A3%85win8-for-mac/"/>
+    <id>http://lekeopen.com/2015/08/Virtualbox-安装win8-for-mac/</id>
+    <published>2015-08-11T15:44:05.000Z</published>
+    <updated>2016-05-02T17:43:01.000Z</updated>
+    
+    <content type="html">&lt;p&gt;因为需要在 Win8 上做一些测试，所以需要在 Mac 上装一个 Win8。&lt;br&gt;因为 Virtualbox 是开源的，所以我选择 Virtualbox。&lt;br&gt;在用 Virtualbox 安装 Win8 时候报错 &lt;code&gt;0x000000c4&lt;/code&gt;&lt;br&gt;网上好多解决方法，都是 win 系统下。win 和 mac 的大体解决思路一样，只是命令有所差别。&lt;/p&gt;
+&lt;h3 id=&quot;Win-命令&quot;&gt;&lt;a href=&quot;#Win-命令&quot; class=&quot;headerlink&quot; title=&quot;Win 命令&quot;&gt;&lt;/a&gt;Win 命令&lt;/h3&gt;&lt;p&gt;（1）命令行下， 运行下面代码，找到VM名称。&lt;/p&gt;
+&lt;p&gt;  &lt;code&gt;&amp;quot;c:\Program Files\Oracle\VirtualBox\VBoxManage.exe&amp;quot;  list vms&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;（2）然后在命令行下运行下面的代码，记得先将[vmname]替换为VM名称：&lt;/p&gt;
+&lt;p&gt;  &lt;code&gt;&amp;quot;c:\Program Files\Oracle\VirtualBox\VBoxManage.exe&amp;quot; setextradata [vmname] VBoxInternal/CPUM/CMPXCHG16B 1&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Mac-命令&quot;&gt;&lt;a href=&quot;#Mac-命令&quot; class=&quot;headerlink&quot; title=&quot;Mac 命令&quot;&gt;&lt;/a&gt;Mac 命令&lt;/h3&gt;&lt;p&gt;（1）打开 Mac 自带终端，输入下面命令，找到VM名称。&lt;/p&gt;
+&lt;p&gt;  &lt;code&gt;vboxmanage list vms&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;（2）然后在命令行下运行下面的代码，记得先将[vmname]替换为VM名称：&lt;/p&gt;
+&lt;p&gt;  &lt;code&gt;VBoxManage setextradata &amp;quot;win8&amp;quot; VBoxInternal/CPUM/CMPXCHG16B 1&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;win8 就是我的 vmname&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这样就可以正常安装 Win8 了&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;因为需要在 Win8 上做一些测试，所以需要在 Mac 上装一个 Win8。&lt;br&gt;因为 Virtualbox 是开源的，所以我选择 Virtualbox。&lt;br&gt;在用 Virtualbox 安装 Win8 时候报错 &lt;code&gt;0x000000c4&lt;/code&gt;&lt;br&gt;网
+    
+    </summary>
+    
+      <category term="技术" scheme="http://lekeopen.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="运维相关" scheme="http://lekeopen.com/tags/%E8%BF%90%E7%BB%B4%E7%9B%B8%E5%85%B3/"/>
+    
+      <category term="工具使用" scheme="http://lekeopen.com/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一个关于SSH的问题</title>
+    <link href="http://lekeopen.com/2015/07/%E4%B8%80%E4%B8%AA%E5%85%B3%E4%BA%8ESSH%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>http://lekeopen.com/2015/07/一个关于SSH的问题/</id>
+    <published>2015-07-28T15:35:35.000Z</published>
+    <updated>2016-05-02T17:43:01.000Z</updated>
+    
+    <content type="html">&lt;p&gt;mac 不能 ssh  服务器 ，报错提示&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Received disconnect from 123.57.13.0: 2: Too many authentication failures for root&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;换了命令行工具依然出错，用其他电脑连接一切正常。&lt;br&gt;以前服务器绑定过 mac 的ssh-key.pub，因为 mac 上的 ssh-key 变更过。&lt;br&gt;所以导致服务器验证通不过。查了相关资料后。&lt;br&gt;再 ssh 后面 加上&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;-o PubkeyAuthentication=no&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这个参数，连接正常。&lt;/p&gt;
+&lt;p&gt;最后登录服务修改&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;/etc/ssh/sshd_config&lt;/code&gt; 文件&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;MaxAuthTries=2&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;参数等于2,一些正常，重新绑定 mac ssh-key.pub&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;mac 不能 ssh  服务器 ，报错提示&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Received disconnect from 123.57.13.0: 2: Too many authentication failures for root&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;换了命令行
+    
+    </summary>
+    
+      <category term="技术" scheme="http://lekeopen.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="运维相关" scheme="http://lekeopen.com/tags/%E8%BF%90%E7%BB%B4%E7%9B%B8%E5%85%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>拿到营业执照了</title>
+    <link href="http://lekeopen.com/2015/07/%E6%8B%BF%E5%88%B0%E8%90%A5%E4%B8%9A%E6%89%A7%E7%85%A7%E4%BA%86/"/>
+    <id>http://lekeopen.com/2015/07/拿到营业执照了/</id>
+    <published>2015-07-16T15:09:48.000Z</published>
+    <updated>2016-04-02T09:32:18.000Z</updated>
+    
+    <content type="html">&lt;p&gt;今天是个好日子，终于拿到营业执照了&lt;br&gt;等了很久终于在今天拿到营业执照了～～&lt;br&gt;哈哈哈～～&lt;br&gt;接下来就是税务登记证和银行开户！～&lt;br&gt;太激动了，终于有自己的公司了～～&lt;br&gt;哈哈哈～～～&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天是个好日子，终于拿到营业执照了&lt;br&gt;等了很久终于在今天拿到营业执照了～～&lt;br&gt;哈哈哈～～&lt;br&gt;接下来就是税务登记证和银行开户！～&lt;br&gt;太激动了，终于有自己的公司了～～&lt;br&gt;哈哈哈～～～&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="公司" scheme="http://lekeopen.com/categories/%E5%85%AC%E5%8F%B8/"/>
+    
+    
+      <category term="创立历程" scheme="http://lekeopen.com/tags/%E5%88%9B%E7%AB%8B%E5%8E%86%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>天水跳蚤前端开发</title>
+    <link href="http://lekeopen.com/2015/07/%E5%A4%A9%E6%B0%B4%E8%B7%B3%E8%9A%A4%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    <id>http://lekeopen.com/2015/07/天水跳蚤前端开发/</id>
+    <published>2015-07-16T13:12:55.000Z</published>
+    <updated>2016-04-02T18:04:22.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;tsflea-com-终于进入开发近段了～&quot;&gt;&lt;a href=&quot;#tsflea-com-终于进入开发近段了～&quot; class=&quot;headerlink&quot; title=&quot;tsflea.com 终于进入开发近段了～&quot;&gt;&lt;/a&gt;tsflea.com 终于进入开发近段了～&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://source.free-e.net/leke_tsflea_bootstrap.gif&quot; alt=&quot;天水跳蚤前端开发&quot; title=&quot;基于bootstrap&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;前半年都在忙单子，挣了没几个钱。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;然后学习，现在终于有时间忙自己的事了。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;一个自己的项目，被很多人不看好的项目&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;tsflea.com 的前端基于bootstrap.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;我想打造的是一个简单而实用的平台什么复杂的发布流程，什么繁琐的分类。&lt;/p&gt;
+&lt;p&gt;统统见鬼去吧～&lt;/p&gt;
+&lt;p&gt;目前前端代码在 &lt;a href=&quot;https://coding.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://coding.net/&lt;/a&gt; 上托管。&lt;/p&gt;
+&lt;p&gt;项目演示地址：&lt;a href=&quot;http://tsflea.coding.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;tsflea.coding.io&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;tsflea-com-终于进入开发近段了～&quot;&gt;&lt;a href=&quot;#tsflea-com-终于进入开发近段了～&quot; class=&quot;headerlink&quot; title=&quot;tsflea.com 终于进入开发近段了～&quot;&gt;&lt;/a&gt;tsflea.com 终于进入开发近段了～&lt;/
+    
+    </summary>
+    
+      <category term="公司" scheme="http://lekeopen.com/categories/%E5%85%AC%E5%8F%B8/"/>
+    
+    
+      <category term="公司项目" scheme="http://lekeopen.com/tags/%E5%85%AC%E5%8F%B8%E9%A1%B9%E7%9B%AE/"/>
+    
+      <category term="进度报告" scheme="http://lekeopen.com/tags/%E8%BF%9B%E5%BA%A6%E6%8A%A5%E5%91%8A/"/>
+    
+      <category term="天水跳蚤" scheme="http://lekeopen.com/tags/%E5%A4%A9%E6%B0%B4%E8%B7%B3%E8%9A%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记事本工具</title>
+    <link href="http://lekeopen.com/2015/07/%E8%AE%B0%E4%BA%8B%E6%9C%AC%E5%B7%A5%E5%85%B7/"/>
+    <id>http://lekeopen.com/2015/07/记事本工具/</id>
+    <published>2015-07-14T15:50:22.000Z</published>
+    <updated>2016-05-02T17:43:01.000Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;今天统一了记事本工具，之前pc ,手机都安装了下面三个记事本工具。感觉有点繁琐也不方便。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;onenote&quot;&gt;&lt;a href=&quot;#onenote&quot; class=&quot;headerlink&quot; title=&quot;onenote&quot;&gt;&lt;/a&gt;onenote&lt;/h1&gt;&lt;p&gt;最早一直在用 onenote ，因为 onenote 是软件office套件。&lt;br&gt;最早接触到了 onenote, onenote 功能很强大，有分类，有标签还可以给记事本加密。&lt;br&gt;但缺点就是 onenoote 云服务不是很方便，数据同步不是太友好。早期没有云概念的时候， onenote 基本是属于单机版的工具。&lt;/p&gt;
+&lt;h1 id=&quot;麦库记事&quot;&gt;&lt;a href=&quot;#麦库记事&quot; class=&quot;headerlink&quot; title=&quot;麦库记事&quot;&gt;&lt;/a&gt;麦库记事&lt;/h1&gt;&lt;p&gt;为了很多设备能共享我记事本的数据，我找到麦库，开始的几年一直用麦库。直到用了 mac 机子后发现麦库对 mac 系统的支持并不好。除了同步数据的问题，用 mac 版的麦库删除数据的时候经常删不了。所以我确定放弃麦库。&lt;/p&gt;
+&lt;h1 id=&quot;印象笔记&quot;&gt;&lt;a href=&quot;#印象笔记&quot; class=&quot;headerlink&quot; title=&quot;印象笔记&quot;&gt;&lt;/a&gt;印象笔记&lt;/h1&gt;&lt;p&gt;在学习的时候发现好多人都在用印象笔记，所以自己就下一个试。&lt;br&gt;用了一段时间发现还不错。所以就决定以后用印象笔记了。&lt;br&gt;把前面的麦库和 onenote 的数据都导入到印象了。&lt;br&gt;最主要的是印象对 mac 支持非常不错。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;今天统一了记事本工具，之前pc ,手机都安装了下面三个记事本工具。感觉有点繁琐也不方便。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;onenote&quot;&gt;&lt;a href=&quot;#onenote&quot; class=&quot;headerlink&quot; title=
+    
+    </summary>
+    
+      <category term="技术" scheme="http://lekeopen.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="应用工具" scheme="http://lekeopen.com/tags/%E5%BA%94%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="产品介绍" scheme="http://lekeopen.com/tags/%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ghost is blog system!</title>
+    <link href="http://lekeopen.com/2015/07/ghost-is-blog-system/"/>
+    <id>http://lekeopen.com/2015/07/ghost-is-blog-system/</id>
+    <published>2015-07-14T15:47:53.000Z</published>
+    <updated>2017-04-03T11:42:54.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;em&gt;ghost 第一次安装，挺容易的&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;试试看，不知道和hexo相比怎么样？&lt;/p&gt;
+&lt;p&gt;我之前用hexo建了一个记录&lt;a href=&quot;http://lekee.cc&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;乐可&lt;/a&gt;成长过程的blog。&lt;/p&gt;
+&lt;p&gt;代码托管到github上。&lt;/p&gt;
+&lt;p&gt;刚开始用hexo的时候，感觉这是个很挺神奇，很高大上的事。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;原来博客还可以用命令行来写。&lt;/em&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight stata&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;hexo &lt;span class=&quot;keyword&quot;&gt;n&lt;/span&gt; 标题 &lt;span class=&quot;comment&quot;&gt;//发布新文章&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hexo &lt;span class=&quot;keyword&quot;&gt;g&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;//生成html静态文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hexo &lt;span class=&quot;keyword&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;//发布到服务器 （远程发布到github上)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;可能是自己用命令行干活的功夫还不到家，每次用 &lt;code&gt;hexo n&lt;/code&gt; 新建了一篇博客后，都要打开编辑工具来编辑博客内容。&lt;/p&gt;
+&lt;p&gt;用编辑器写好内容后，用 &lt;code&gt;hexo g&lt;/code&gt; 生成一次博客静态，生成中包括Tags , Category都要生成一次。最后再用 &lt;code&gt;hexo d&lt;/code&gt; 远程发布到服务器。&lt;/p&gt;
+&lt;p&gt;博客发到网上后，发现哪里有不合适的地方。&lt;/p&gt;
+&lt;p&gt;又要重复这三个步骤。感觉还是有点繁琐。&lt;/p&gt;
+&lt;p&gt;不知道是我的习惯问题，还是什么？&lt;/p&gt;
+&lt;p&gt;不知道这个ghost怎么样？&lt;/p&gt;
+&lt;p&gt;不过hexo和ghost都用Markdown写博客的，&lt;/p&gt;
+&lt;p&gt;似乎Markdown现在已经成为web书写的格式的趋势了。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;em&gt;ghost 第一次安装，挺容易的&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;试试看，不知道和hexo相比怎么样？&lt;/p&gt;
+&lt;p&gt;我之前用hexo建了一个记录&lt;a href=&quot;http://lekee.cc&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;乐可&lt;/a&gt;成
+    
+    </summary>
+    
+      <category term="技术" scheme="http://lekeopen.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="使用心得" scheme="http://lekeopen.com/tags/%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/"/>
+    
+      <category term="博客框架" scheme="http://lekeopen.com/tags/%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6/"/>
+    
+  </entry>
+  
+</feed>
