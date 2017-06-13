@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lekeopen.com/"/>
-  <updated>2017-04-03T11:45:14.000Z</updated>
+  <updated>2017-06-13T06:24:36.000Z</updated>
   <id>http://lekeopen.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://lekeopen.com/2016/05/%E5%85%B3%E4%BA%8E%E4%B9%90%E5%8F%AF%E5%BC%80%E6%BA%90%E2%80%9C%E6%B6%89%E9%BB%91%E2%80%9D%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>http://lekeopen.com/2016/05/关于乐可开源“涉黑”的问题/</id>
     <published>2016-05-30T10:14:20.000Z</published>
-    <updated>2017-04-03T11:45:14.000Z</updated>
+    <updated>2017-06-13T06:24:36.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;情况说明&quot;&gt;&lt;a href=&quot;#情况说明&quot; class=&quot;headerlink&quot; title=&quot;情况说明&quot;&gt;&lt;/a&gt;情况说明&lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;这已经官网第二次宕机，宕机时间经历2天多。(原本以为比较麻烦，所以没有把恢复官网放到自己任务的最优先级)，等自己手上几个任务完成后，快到天亮的时候，结果用了不到10分钟就解决了问题。  &lt;/p&gt;
@@ -101,7 +101,7 @@ create mode 100644 wp-includes/widgets/class-wp-widget-calendar.php.suspected
     <link href="http://lekeopen.com/2016/05/%E5%85%B3%E4%BA%8E%E5%A4%A9%E6%B0%B4%E8%B7%B3%E8%9A%A4session%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>http://lekeopen.com/2016/05/关于天水跳蚤session的问题/</id>
     <published>2016-05-11T15:37:07.000Z</published>
-    <updated>2016-05-11T18:57:43.000Z</updated>
+    <updated>2017-06-13T06:24:36.000Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;问题反反复复的出了2，3次，今天记录下解决办法。怕日后忘记&lt;/em&gt;&lt;/p&gt;
@@ -145,7 +145,7 @@ create mode 100644 wp-includes/widgets/class-wp-widget-calendar.php.suspected
     <link href="http://lekeopen.com/2016/05/%E5%85%B3%E4%BA%8E%E5%BE%AE%E4%BF%A1/"/>
     <id>http://lekeopen.com/2016/05/关于微信/</id>
     <published>2016-05-02T17:46:44.000Z</published>
-    <updated>2016-05-02T19:43:15.000Z</updated>
+    <updated>2017-06-13T06:24:36.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;http://source.free-e.net/about-weixin.jpg&quot; alt=&quot;关于微信&quot; title=&quot;关于微信&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
@@ -195,7 +195,7 @@ create mode 100644 wp-includes/widgets/class-wp-widget-calendar.php.suspected
     <link href="http://lekeopen.com/2016/05/git-%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0/"/>
     <id>http://lekeopen.com/2016/05/git-命令参数/</id>
     <published>2016-05-01T19:18:32.000Z</published>
-    <updated>2016-05-03T13:10:34.000Z</updated>
+    <updated>2017-06-13T06:24:36.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;git-clone-lt-远程git仓库地址-gt&quot;&gt;&lt;a href=&quot;#git-clone-lt-远程git仓库地址-gt&quot; class=&quot;headerlink&quot; title=&quot;git clone &amp;lt;远程git仓库地址&amp;gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;git clone &amp;lt;远程git仓库地址&amp;gt;&lt;/code&gt;&lt;/h1&gt;&lt;p&gt;克隆远程项目&lt;/p&gt;
 &lt;h2 id=&quot;git-clone-b-lt-远程分支名-gt-lt-远程git仓库地址-gt&quot;&gt;&lt;a href=&quot;#git-clone-b-lt-远程分支名-gt-lt-远程git仓库地址-gt&quot; class=&quot;headerlink&quot; title=&quot;git clone -b &amp;lt;远程分支名&amp;gt; &amp;lt;远程git仓库地址&amp;gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;git clone -b &amp;lt;远程分支名&amp;gt; &amp;lt;远程git仓库地址&amp;gt;&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;克隆远程分支名&lt;/p&gt;
@@ -235,7 +235,7 @@ create mode 100644 wp-includes/widgets/class-wp-widget-calendar.php.suspected
     <link href="http://lekeopen.com/2016/04/Vagrant%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E6%B1%87%E6%80%BB%EF%BC%88%E4%B8%8D%E5%AE%9A%E6%9C%9F%E6%9B%B4%E6%96%B0%EF%BC%89/"/>
     <id>http://lekeopen.com/2016/04/Vagrant的问题的汇总（不定期更新）/</id>
     <published>2016-04-28T21:19:04.000Z</published>
-    <updated>2016-05-02T17:43:01.000Z</updated>
+    <updated>2017-06-13T06:24:36.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;启动问题&quot;&gt;&lt;a href=&quot;#启动问题&quot; class=&quot;headerlink&quot; title=&quot;启动问题&quot;&gt;&lt;/a&gt;启动问题&lt;/h1&gt;&lt;h2 id=&quot;关于-default-Warning-Authentication-failure-Retrying…&quot;&gt;&lt;a href=&quot;#关于-default-Warning-Authentication-failure-Retrying…&quot; class=&quot;headerlink&quot; title=&quot;关于 default: Warning: Authentication failure. Retrying…&quot;&gt;&lt;/a&gt;关于 default: Warning: Authentication failure. Retrying…&lt;/h2&gt;&lt;h3 id=&quot;现象&quot;&gt;&lt;a href=&quot;#现象&quot; class=&quot;headerlink&quot; title=&quot;现象&quot;&gt;&lt;/a&gt;现象&lt;/h3&gt;&lt;p&gt; 再用 &lt;code&gt;vagrant up&lt;/code&gt; 启动虚拟机 或者 &lt;code&gt;vagrant reload&lt;/code&gt; 重启虚拟机的时候&lt;br&gt; 一直不停的报错 default: Warning: Authentication failure. Retrying…&lt;/p&gt;
 &lt;h3 id=&quot;解决&quot;&gt;&lt;a href=&quot;#解决&quot; class=&quot;headerlink&quot; title=&quot;解决&quot;&gt;&lt;/a&gt;解决&lt;/h3&gt;&lt;p&gt;在 Vagrantfile 这个文件里面添加了这两行，然后关掉关掉虚拟机。&lt;br&gt;&lt;code&gt;config.ssh.username = &amp;quot;vagrant&amp;quot;&lt;/code&gt;&lt;br&gt;&lt;code&gt;config.ssh.password = &amp;quot;vagrant&amp;quot;&lt;/code&gt;&lt;br&gt;注释掉这两行代码&lt;br&gt;&lt;code&gt;vagrant reload&lt;/code&gt;  重启虚拟机，问题解决。&lt;/p&gt;
@@ -263,7 +263,7 @@ create mode 100644 wp-includes/widgets/class-wp-widget-calendar.php.suspected
     <link href="http://lekeopen.com/2016/04/Git-%E5%BC%80%E5%8F%91%E8%80%85%E5%BF%85%E5%A4%87%E7%9A%84%E6%8A%80%E8%83%BD/"/>
     <id>http://lekeopen.com/2016/04/Git-开发者必备的技能/</id>
     <published>2016-04-26T05:44:19.000Z</published>
-    <updated>2016-05-02T17:42:41.000Z</updated>
+    <updated>2017-06-13T06:24:36.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;为什么学习-git&quot;&gt;&lt;a href=&quot;#为什么学习-git&quot; class=&quot;headerlink&quot; title=&quot;为什么学习 git&quot;&gt;&lt;/a&gt;为什么学习 git&lt;/h1&gt;&lt;p&gt;最近一直在学习 git,为的是方便开发和管理代码。&lt;br&gt;git 也是作为一名码农和项目管理者应该所具备的技能。&lt;br&gt;通过一段时间的学习现在 git 也已经正式应用在我们的项目当中了。&lt;/p&gt;
 &lt;h1 id=&quot;git-对于我的实际应用&quot;&gt;&lt;a href=&quot;#git-对于我的实际应用&quot; class=&quot;headerlink&quot; title=&quot;git 对于我的实际应用&quot;&gt;&lt;/a&gt;git 对于我的实际应用&lt;/h1&gt;&lt;h2 id=&quot;案例：天水跳蚤&quot;&gt;&lt;a href=&quot;#案例：天水跳蚤&quot; class=&quot;headerlink&quot; title=&quot;案例：天水跳蚤&quot;&gt;&lt;/a&gt;案例：天水跳蚤&lt;/h2&gt;&lt;h3 id=&quot;案例介绍&quot;&gt;&lt;a href=&quot;#案例介绍&quot; class=&quot;headerlink&quot; title=&quot;案例介绍&quot;&gt;&lt;/a&gt;案例介绍&lt;/h3&gt;&lt;p&gt;天水跳蚤是一个关于本地同城的闲置物品发布平台。&lt;/p&gt;
@@ -303,7 +303,7 @@ create mode 100644 wp-includes/widgets/class-wp-widget-calendar.php.suspected
     <link href="http://lekeopen.com/2016/04/%E5%A4%A9%E6%98%9F%E6%B8%B8%E4%B9%90%E5%9F%8E/"/>
     <id>http://lekeopen.com/2016/04/天星游乐城/</id>
     <published>2016-04-10T14:28:18.000Z</published>
-    <updated>2016-04-10T15:41:32.000Z</updated>
+    <updated>2017-06-13T06:24:36.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;http://source.free-e.net/tianxing.JPG&quot; alt=&quot;天星游乐城&quot; title=&quot;秦州店&quot;&gt;&lt;/p&gt;
 &lt;p&gt;今天等宝宝玩，看到这样的一番景象心里感觉丝丝的苦逼。&lt;br&gt;宝宝们已经进去了，又不想坏了宝宝们的心情只能将就让他们的玩了。&lt;br&gt;在等宝宝的时间里，我一直反反复复思考着这样一个问题。&lt;br&gt;为什么这么烂的一个地方，却有这么多家长带孩子来玩呢？&lt;/p&gt;
@@ -348,7 +348,7 @@ create mode 100644 wp-includes/widgets/class-wp-widget-calendar.php.suspected
     <link href="http://lekeopen.com/2016/04/%E8%87%AA%E5%BB%BAGit%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     <id>http://lekeopen.com/2016/04/自建Git服务器/</id>
     <published>2016-04-07T19:17:25.000Z</published>
-    <updated>2016-05-02T17:43:01.000Z</updated>
+    <updated>2017-06-13T06:24:36.000Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;&lt;em&gt;折腾了几天，找了无数篇文章。一直都在失败。找了很多 hooks 处理方法, 都不能同步代码文件到指定的 web 目录去。但今天下午终于搞定了。有点小开心小激动。&lt;/em&gt;&lt;/p&gt;
@@ -393,7 +393,7 @@ create mode 100644 wp-includes/widgets/class-wp-widget-calendar.php.suspected
     <link href="http://lekeopen.com/2016/04/%E7%AB%8B%E4%B8%9A%E5%88%9D%E5%81%8F/"/>
     <id>http://lekeopen.com/2016/04/立业初偏/</id>
     <published>2016-04-02T09:48:51.000Z</published>
-    <updated>2016-04-02T09:53:38.000Z</updated>
+    <updated>2017-06-13T06:24:36.000Z</updated>
     
     <content type="html">&lt;p&gt;愚人，已到而立之年。成家，但未立业。&lt;br&gt;识世界，但不明交际之礼。&lt;br&gt;自幼，内向。不善口舌之技。&lt;br&gt;自习书之时，贪玩成性。未高榜提名。&lt;br&gt;青年吊儿郎当，迷于琴弦知音。&lt;br&gt;便学以音乐追逐于文艺，不料步入为人师表之列。&lt;br&gt;因年少在外游学，见于大千世界之繁华。&lt;br&gt;便一心想有所一番作为。&lt;br&gt;创办网站社区，着迷一时。&lt;br&gt;后感靡靡之音之真实，现实之残酷。&lt;br&gt;又创办名为“天水制造”之团队，开创一番弦音之天地。&lt;br&gt;举办“自由回归”之名演出，兴于一时。&lt;br&gt;后因，工作、身体、人情、环境等诸多因素，停止先前一切之所为。&lt;br&gt;而后成家，深受金钱之苦甜。&lt;br&gt;便从此苦寻生财之道路，后识得志同之前辈。&lt;br&gt;酒吧夜场之事业开启,&lt;br&gt;后因性格与人性相差甚远，而退之。&lt;br&gt;如今，小观之世界。小阅文章之数篇。&lt;br&gt;猛如当头棍棒一番，豁然觉得世界之变。&lt;br&gt;互联网之兴盛强大，如同当年工业革命之势。&lt;br&gt;必有改变世界之根本。&lt;br&gt;便深知而立之年理因有所作为一番。&lt;br&gt;无昼无夜，投身于其中。&lt;br&gt;苦修于互联网之技能，自甘苦。&lt;br&gt;自嘲为之创业之事，虽不是改变世界之大事。&lt;br&gt;但对愚人而言却是人之热情，少年之梦想。&lt;br&gt;追求生活世界精彩之向往。&lt;br&gt;其中不明大意者甚多，难免于孤独之情理，&lt;br&gt;作为前无人之理解，只能身体而力行。&lt;br&gt;以作师范，望共创一番之事业。&lt;/p&gt;
 </content>
@@ -418,7 +418,7 @@ create mode 100644 wp-includes/widgets/class-wp-widget-calendar.php.suspected
     <link href="http://lekeopen.com/2015/10/%E5%A4%A9%E6%B0%B4%E8%B7%B3%E8%9A%A4%E5%8D%B3%E5%B0%86%E8%BD%AC%E5%85%A5%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E9%98%B6%E6%AE%B5/"/>
     <id>http://lekeopen.com/2015/10/天水跳蚤即将转入后端开发阶段/</id>
     <published>2015-10-27T04:24:52.000Z</published>
-    <updated>2016-04-02T19:45:14.000Z</updated>
+    <updated>2017-06-13T06:24:36.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;em&gt;经过2个星期的努力，天水跳蚤即将转入后端开发阶段&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://source.free-e.net/tsflea.com-dev.png&quot; class=&quot;img-topic&quot;&gt;&lt;/p&gt;
@@ -463,7 +463,7 @@ create mode 100644 wp-includes/widgets/class-wp-widget-calendar.php.suspected
     <link href="http://lekeopen.com/2015/10/%E4%B9%90%E5%8F%AF%E5%AE%98%E7%BD%91%E6%9C%89%E5%A4%87%E6%A1%88%E4%BA%86/"/>
     <id>http://lekeopen.com/2015/10/乐可官网有备案了/</id>
     <published>2015-10-01T04:46:03.000Z</published>
-    <updated>2016-04-02T18:08:21.000Z</updated>
+    <updated>2017-06-13T06:24:36.000Z</updated>
     
     <content type="html">&lt;p&gt;阿里做事就是效率，申请没几天。已经拿到备案号了。&lt;br&gt;乐可有自己的备案了，官网正在建设中。。。&lt;br&gt;以后用lekee.cc 就是访问公司的正式官方了～～&lt;/p&gt;
 </content>
@@ -487,7 +487,7 @@ create mode 100644 wp-includes/widgets/class-wp-widget-calendar.php.suspected
     <link href="http://lekeopen.com/2015/09/%E5%89%8D%E7%AB%AF%E5%A4%A7%E4%BD%93%E7%BB%93%E6%9E%84%E7%A1%AE%E5%AE%9A/"/>
     <id>http://lekeopen.com/2015/09/前端大体结构确定/</id>
     <published>2015-09-21T14:38:27.000Z</published>
-    <updated>2016-04-02T18:08:18.000Z</updated>
+    <updated>2017-06-13T06:24:36.000Z</updated>
     
     <content type="html">&lt;p&gt;跳蚤的大题结构已经确定，前端代码也已经 git coding.net 上去了。&lt;br&gt;基本页面已经确定&lt;br&gt;基本栏目已经确定&lt;br&gt;基本功能已经确定&lt;br&gt;现在网站前端还有一些细节要做，还需要几个js。&lt;br&gt;比如物品展示，我准备用瀑布流&lt;br&gt;navbar 我准备用下拉自动影藏的效果。&lt;/p&gt;
 &lt;p&gt;还有大体颜色也会做一些调整。&lt;/p&gt;
@@ -495,7 +495,7 @@ create mode 100644 wp-includes/widgets/class-wp-widget-calendar.php.suspected
 &lt;p&gt;演示1：&lt;a href=&quot;http://tsflea.coding.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://tsflea.coding.io&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;演示2：&lt;a href=&quot;http://tsflea-dev.coding.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://tsflea-dev.coding.io&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;项目仍在寻求感兴趣的小伙伴&lt;br&gt;如果你感兴趣请来电或发email&lt;br&gt;对天水跳蚤有什么建议发邮件&lt;br&gt;&lt;a href=&quot;&amp;#109;&amp;#x61;&amp;#x69;&amp;#108;&amp;#116;&amp;#x6f;&amp;#x3a;&amp;#115;&amp;#101;&amp;#114;&amp;#x76;&amp;#105;&amp;#99;&amp;#101;&amp;#64;&amp;#116;&amp;#x73;&amp;#102;&amp;#108;&amp;#x65;&amp;#97;&amp;#46;&amp;#99;&amp;#111;&amp;#109;&quot;&gt;&amp;#115;&amp;#101;&amp;#114;&amp;#x76;&amp;#105;&amp;#99;&amp;#101;&amp;#64;&amp;#116;&amp;#x73;&amp;#102;&amp;#108;&amp;#x65;&amp;#97;&amp;#46;&amp;#99;&amp;#111;&amp;#109;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;项目仍在寻求感兴趣的小伙伴&lt;br&gt;如果你感兴趣请来电或发email&lt;br&gt;对天水跳蚤有什么建议发邮件&lt;br&gt;&lt;a href=&quot;&amp;#x6d;&amp;#x61;&amp;#105;&amp;#x6c;&amp;#116;&amp;#111;&amp;#58;&amp;#x73;&amp;#101;&amp;#114;&amp;#118;&amp;#x69;&amp;#x63;&amp;#101;&amp;#x40;&amp;#116;&amp;#115;&amp;#102;&amp;#x6c;&amp;#x65;&amp;#x61;&amp;#x2e;&amp;#x63;&amp;#x6f;&amp;#x6d;&quot;&gt;&amp;#x73;&amp;#101;&amp;#114;&amp;#118;&amp;#x69;&amp;#x63;&amp;#101;&amp;#x40;&amp;#116;&amp;#115;&amp;#102;&amp;#x6c;&amp;#x65;&amp;#x61;&amp;#x2e;&amp;#x63;&amp;#x6f;&amp;#x6d;&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 </content>
     
@@ -521,11 +521,11 @@ create mode 100644 wp-includes/widgets/class-wp-widget-calendar.php.suspected
     <link href="http://lekeopen.com/2015/09/%E5%A4%A9%E6%B0%B4%E8%B7%B3%E8%9A%A4%E6%9C%80%E6%96%B0%E5%BC%80%E5%8F%91%E8%BF%9B%E5%BA%A6/"/>
     <id>http://lekeopen.com/2015/09/天水跳蚤最新开发进度/</id>
     <published>2015-09-14T01:55:23.000Z</published>
-    <updated>2016-04-02T09:36:34.000Z</updated>
+    <updated>2017-06-13T06:24:36.000Z</updated>
     
     <content type="html">&lt;p&gt;最近不太接单子了，这几天一直再进行天水跳蚤的开发。&lt;br&gt;前端框架网站整体用bootstrap开发，部分地方可能会用到别的。&lt;br&gt;一个庞大的项目正在进行，但目前的开发工作只有我一个人。&lt;br&gt;从网站的功能、整体布局。到现在的开发。&lt;br&gt;这个过程是漫长的。现在网站还属于前端开发阶段。&lt;br&gt;天水跳蚤是一个简单、时尚、实用的二手信息发布平台。&lt;br&gt;网站主要功能栏目 物品，活动，博客&lt;br&gt;现在活动和博客的栏目页和内容页已经完成。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;天水跳蚤寻求项目合作伙伴&lt;br&gt;感兴趣请发邮箱 &lt;a href=&quot;&amp;#x6d;&amp;#x61;&amp;#x69;&amp;#x6c;&amp;#x74;&amp;#x6f;&amp;#58;&amp;#x72;&amp;#x6f;&amp;#x63;&amp;#x6b;&amp;#x74;&amp;#115;&amp;#64;&amp;#115;&amp;#x69;&amp;#110;&amp;#97;&amp;#46;&amp;#99;&amp;#x6f;&amp;#x6d;&quot;&gt;&amp;#x72;&amp;#x6f;&amp;#x63;&amp;#x6b;&amp;#x74;&amp;#115;&amp;#64;&amp;#115;&amp;#x69;&amp;#110;&amp;#97;&amp;#46;&amp;#99;&amp;#x6f;&amp;#x6d;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;天水跳蚤寻求项目合作伙伴&lt;br&gt;感兴趣请发邮箱 &lt;a href=&quot;&amp;#x6d;&amp;#97;&amp;#x69;&amp;#108;&amp;#116;&amp;#x6f;&amp;#58;&amp;#114;&amp;#111;&amp;#99;&amp;#107;&amp;#x74;&amp;#115;&amp;#64;&amp;#115;&amp;#105;&amp;#110;&amp;#97;&amp;#46;&amp;#x63;&amp;#111;&amp;#x6d;&quot;&gt;&amp;#114;&amp;#111;&amp;#99;&amp;#107;&amp;#x74;&amp;#115;&amp;#64;&amp;#115;&amp;#105;&amp;#110;&amp;#97;&amp;#46;&amp;#x63;&amp;#111;&amp;#x6d;&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 </content>
     
@@ -551,7 +551,7 @@ create mode 100644 wp-includes/widgets/class-wp-widget-calendar.php.suspected
     <link href="http://lekeopen.com/2015/09/%E5%85%B3%E4%BA%8E%E4%BA%92%E8%81%94%E7%BD%91%E6%88%91%E4%BB%AC%E7%A6%BB%E7%9A%84%E8%BF%98%E5%BE%88%E8%BF%9C/"/>
     <id>http://lekeopen.com/2015/09/关于互联网我们离的还很远/</id>
     <published>2015-09-10T14:46:21.000Z</published>
-    <updated>2016-04-28T21:46:35.000Z</updated>
+    <updated>2017-06-13T06:24:36.000Z</updated>
     
     <content type="html">&lt;p&gt;最近很累，接了几个政府网站的活。这几个活忙下来，唯一的感觉就是，关于互联网我们还离的很远。&lt;/p&gt;
 &lt;p&gt;为什么这么说呢？首先我接的这几个活都是别人转包给我的。&lt;/p&gt;
@@ -590,7 +590,7 @@ create mode 100644 wp-includes/widgets/class-wp-widget-calendar.php.suspected
     <link href="http://lekeopen.com/2015/08/Virtualbox-%E5%AE%89%E8%A3%85win8-for-mac/"/>
     <id>http://lekeopen.com/2015/08/Virtualbox-安装win8-for-mac/</id>
     <published>2015-08-11T15:44:05.000Z</published>
-    <updated>2016-05-02T17:43:01.000Z</updated>
+    <updated>2017-06-13T06:24:36.000Z</updated>
     
     <content type="html">&lt;p&gt;因为需要在 Win8 上做一些测试，所以需要在 Mac 上装一个 Win8。&lt;br&gt;因为 Virtualbox 是开源的，所以我选择 Virtualbox。&lt;br&gt;在用 Virtualbox 安装 Win8 时候报错 &lt;code&gt;0x000000c4&lt;/code&gt;&lt;br&gt;网上好多解决方法，都是 win 系统下。win 和 mac 的大体解决思路一样，只是命令有所差别。&lt;/p&gt;
 &lt;h3 id=&quot;Win-命令&quot;&gt;&lt;a href=&quot;#Win-命令&quot; class=&quot;headerlink&quot; title=&quot;Win 命令&quot;&gt;&lt;/a&gt;Win 命令&lt;/h3&gt;&lt;p&gt;（1）命令行下， 运行下面代码，找到VM名称。&lt;/p&gt;
@@ -627,7 +627,7 @@ create mode 100644 wp-includes/widgets/class-wp-widget-calendar.php.suspected
     <link href="http://lekeopen.com/2015/07/%E4%B8%80%E4%B8%AA%E5%85%B3%E4%BA%8ESSH%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>http://lekeopen.com/2015/07/一个关于SSH的问题/</id>
     <published>2015-07-28T15:35:35.000Z</published>
-    <updated>2016-05-02T17:43:01.000Z</updated>
+    <updated>2017-06-13T06:24:36.000Z</updated>
     
     <content type="html">&lt;p&gt;mac 不能 ssh  服务器 ，报错提示&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;Received disconnect from 123.57.13.0: 2: Too many authentication failures for root&lt;/code&gt;&lt;/p&gt;
@@ -660,7 +660,7 @@ create mode 100644 wp-includes/widgets/class-wp-widget-calendar.php.suspected
     <link href="http://lekeopen.com/2015/07/%E6%8B%BF%E5%88%B0%E8%90%A5%E4%B8%9A%E6%89%A7%E7%85%A7%E4%BA%86/"/>
     <id>http://lekeopen.com/2015/07/拿到营业执照了/</id>
     <published>2015-07-16T15:09:48.000Z</published>
-    <updated>2016-04-02T09:32:18.000Z</updated>
+    <updated>2017-06-13T06:24:36.000Z</updated>
     
     <content type="html">&lt;p&gt;今天是个好日子，终于拿到营业执照了&lt;br&gt;等了很久终于在今天拿到营业执照了～～&lt;br&gt;哈哈哈～～&lt;br&gt;接下来就是税务登记证和银行开户！～&lt;br&gt;太激动了，终于有自己的公司了～～&lt;br&gt;哈哈哈～～～&lt;/p&gt;
 </content>
@@ -684,7 +684,7 @@ create mode 100644 wp-includes/widgets/class-wp-widget-calendar.php.suspected
     <link href="http://lekeopen.com/2015/07/%E5%A4%A9%E6%B0%B4%E8%B7%B3%E8%9A%A4%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     <id>http://lekeopen.com/2015/07/天水跳蚤前端开发/</id>
     <published>2015-07-16T13:12:55.000Z</published>
-    <updated>2016-04-02T18:04:22.000Z</updated>
+    <updated>2017-06-13T06:24:36.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;tsflea-com-终于进入开发近段了～&quot;&gt;&lt;a href=&quot;#tsflea-com-终于进入开发近段了～&quot; class=&quot;headerlink&quot; title=&quot;tsflea.com 终于进入开发近段了～&quot;&gt;&lt;/a&gt;tsflea.com 终于进入开发近段了～&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://source.free-e.net/leke_tsflea_bootstrap.gif&quot; alt=&quot;天水跳蚤前端开发&quot; title=&quot;基于bootstrap&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;前半年都在忙单子，挣了没几个钱。&lt;/strong&gt;&lt;/p&gt;
@@ -719,7 +719,7 @@ create mode 100644 wp-includes/widgets/class-wp-widget-calendar.php.suspected
     <link href="http://lekeopen.com/2015/07/%E8%AE%B0%E4%BA%8B%E6%9C%AC%E5%B7%A5%E5%85%B7/"/>
     <id>http://lekeopen.com/2015/07/记事本工具/</id>
     <published>2015-07-14T15:50:22.000Z</published>
-    <updated>2016-05-02T17:43:01.000Z</updated>
+    <updated>2017-06-13T06:24:36.000Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;今天统一了记事本工具，之前pc ,手机都安装了下面三个记事本工具。感觉有点繁琐也不方便。&lt;/p&gt;
@@ -752,7 +752,7 @@ create mode 100644 wp-includes/widgets/class-wp-widget-calendar.php.suspected
     <link href="http://lekeopen.com/2015/07/ghost-is-blog-system/"/>
     <id>http://lekeopen.com/2015/07/ghost-is-blog-system/</id>
     <published>2015-07-14T15:47:53.000Z</published>
-    <updated>2017-04-03T11:42:54.000Z</updated>
+    <updated>2017-06-13T06:24:36.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;em&gt;ghost 第一次安装，挺容易的&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;试试看，不知道和hexo相比怎么样？&lt;/p&gt;
